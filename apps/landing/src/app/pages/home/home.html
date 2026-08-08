@@ -1,0 +1,48 @@
+<div class="landing">
+  <div class="aurora" aria-hidden="true">
+    <span class="blob-1"></span>
+    <span class="blob-2"></span>
+    <span class="blob-3"></span>
+  </div>
+
+  <header class="topbar no-print">
+    <span class="topbar__brand">
+      <span class="topbar__logo">✦</span>
+      StudyHub
+    </span>
+    <lib-theme-toggle />
+  </header>
+
+  <main class="hero">
+    <div class="hero__panel">
+      <p class="hero__eyebrow">راهنمای مطالعه · تعاملی · فصل به فصل</p>
+      <h1 class="hero__title">
+        هرچی می‌خونی،<br />
+        <span class="hero__title-accent">یادت بمونه.</span>
+      </h1>
+      <p class="hero__sub">
+        خلاصه‌های دقیق، تصویرهای اصل کتاب، و خودآزمایی واقعی برای هر فصل —
+        به‌جای ورق‌زدن صدها صفحه‌ی عکس، همه‌چیز مرتب و آماده‌ی مرور.
+      </p>
+      <p class="hero__dedication">ساخته‌شده با ❋ برای سامین</p>
+    </div>
+
+    <div class="hero__grid">
+      @for (c of courses; track c.id) {
+        <lib-course-card
+          variant="glass"
+          [titleFa]="c.titleFa"
+          [titleEn]="c.titleEn"
+          [subtitleFa]="c.descriptionFa"
+          [metaFa]="c.chapterCount ? c.chapterCount + ' فصل' : ''"
+          [badge]="c.status === 'coming-soon' ? 'به‌زودی' : ''"
+          [icon]="c.icon"
+          [href]="c.href"
+          [disabled]="c.status === 'coming-soon'"
+        />
+      }
+    </div>
+  </main>
+
+  <footer class="landing-footer no-print">StudyHub · مجموعه‌ای رو به رشد از راهنماهای درسی</footer>
+</div>

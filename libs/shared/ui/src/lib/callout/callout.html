@@ -1,0 +1,17 @@
+<div class="callout" [class]="'callout--' + block().kind">
+  <div class="callout__label">
+    @switch (block().kind) {
+      @case ('key') {
+        <span class="callout__icon">★</span>
+      }
+      @case ('warn') {
+        <span class="callout__icon">!</span>
+      }
+      @default {
+        <span class="callout__icon">i</span>
+      }
+    }
+    {{ block().label }}
+  </div>
+  <div class="callout__body" [innerHTML]="block().html"></div>
+</div>

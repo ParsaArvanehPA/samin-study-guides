@@ -1,0 +1,12 @@
+<figure class="fig">
+  <img [src]="fig().src" [alt]="fig().captionFa" loading="lazy" />
+  <figcaption>
+    {{ fig().captionFa }}
+    @if (fig().captionEn) {
+      <span class="en"> — {{ fig().captionEn }}</span>
+    }
+    @if (fig().sourceNote) {
+      <span class="src">{{ fig().sourceNote }}</span>
+    }
+  </figcaption>
+</figure>

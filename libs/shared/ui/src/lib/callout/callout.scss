@@ -1,0 +1,88 @@
+@use 'tokens/surfaces' as surf;
+
+:host {
+  display: block;
+  margin: 18px 0;
+}
+
+.callout {
+  border-radius: var(--radius-sm);
+  padding: 16px 20px;
+  border: 1px solid var(--border);
+  background: var(--surface-2);
+}
+
+.callout__label {
+  font-size: 12.5px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 6px;
+}
+
+.callout__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  font-size: 11px;
+  font-family: var(--font-data);
+  flex: none;
+}
+
+.callout--note {
+  background: var(--violet-soft);
+  border-color: var(--violet);
+  .callout__label {
+    color: var(--violet);
+  }
+  .callout__icon {
+    background: var(--violet);
+    color: var(--surface);
+  }
+}
+
+.callout--key {
+  background: var(--gold-soft);
+  border-color: var(--gold-soft-border);
+  .callout__label {
+    color: var(--gold);
+  }
+  .callout__icon {
+    background: var(--gold);
+    color: var(--accent-ink);
+  }
+}
+
+.callout--warn {
+  background: var(--red-soft);
+  border-color: var(--red-soft-border);
+  .callout__label {
+    color: var(--red);
+  }
+  .callout__icon {
+    background: var(--red);
+    color: var(--surface);
+  }
+}
+
+.callout__body {
+  color: var(--ink);
+  font-size: 15px;
+
+  // Content is injected via [innerHTML], so emulated view-encapsulation attribute
+  // selectors won't reach it — ::ng-deep is required to style it from here.
+  ::ng-deep p {
+    margin: 6px 0;
+  }
+  ::ng-deep p:first-child {
+    margin-top: 0;
+  }
+  ::ng-deep p:last-child {
+    margin-bottom: 0;
+  }
+}

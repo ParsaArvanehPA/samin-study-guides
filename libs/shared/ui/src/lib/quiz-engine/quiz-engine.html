@@ -1,0 +1,71 @@
+<div class="quiz">
+  <div class="quiz__scorebar">
+    <div class="quiz__score">
+      <strong>{{ correctCount() }}</strong>
+      <span>/ {{ mcqCount() }} پاسخ درست</span>
+    </div>
+    <div class="quiz__progress">
+      <div
+        class="quiz__progress-fill"
+        [style.width.%]="mcqCount() ? (answeredCount() / mcqCount()) * 100 : 0"
+      ></div>
+    </div>
+    @if (answeredCount() > 0) {
+      <button type="button" class="quiz__reset" (click)="resetQuiz()">شروع دوباره</button>
+    }
+  </div>
+
+  <ol class="quiz__list">
+    @for (q of questions(); track q.id; let qi = $index) {
+      <li class="quiz__item">
+        @if (isMcq(q)) {
+          <p class="quiz__question">
+            <span class="quiz__qnum">{{ qi + 1 }}</span>
+            {{ q.question }}
+          </p>
+          <ul class="quiz__choices">
+            @for (choice of q.choices; track $index; let ci = $index) {
+              <li>
+                <button
+                  type="button"
+                  class="quiz__choice"
+                  [class.is-correct]="choiceState(q, ci) === 'correct'"
+                  [class.is-wrong]="choiceState(q, ci) === 'wrong'"
+                  [class.is-missed]="choiceState(q, ci) === 'missed'"
+                  [disabled]="selectedIndex(q.id) !== undefined"
+                  (click)="choose(q, ci)"
+                >
+                  <span class="quiz__choice-letter">{{
+                    ['الف', 'ب', 'ج', 'د', 'ه'][ci] || ci + 1
+                  }}</span>
+                  <span class="quiz__choice-text">{{ choice }}</span>
+                </button>
+              </li>
+            }
+          </ul>
+          @if (selectedIndex(q.id) !== undefined) {
+            <div
+              class="quiz__explanation"
+              [class.is-correct]="selectedIndex(q.id) === q.correctIndex"
+            >
+              <strong>{{ selectedIndex(q.id) === q.correctIndex ? 'درست!' : 'نادرست.' }}</strong>
+              {{ q.explanation }}
+            </div>
+          }
+        } @else {
+          <p class="quiz__question">
+            <span class="quiz__qnum quiz__qnum--short">؟</span>
+            {{ q.prompt }}
+          </p>
+          @if (!isRevealed(q.id)) {
+            <button type="button" class="quiz__reveal-btn" (click)="reveal(q.id)">
+              نمایش پاسخ
+            </button>
+          } @else {
+            <div class="quiz__explanation is-correct">{{ q.answer }}</div>
+          }
+        }
+      </li>
+    }
+  </ol>
+</div>

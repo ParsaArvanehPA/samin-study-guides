@@ -1,0 +1,31 @@
+@if (disabled()) {
+  <div class="card card--{{ variant() }} card--disabled">
+    <ng-container *ngTemplateOutlet="body" />
+  </div>
+} @else {
+  <a class="card card--{{ variant() }}" [href]="href()">
+    <ng-container *ngTemplateOutlet="body" />
+  </a>
+}
+
+<ng-template #body>
+  <div class="card__top">
+    <span class="card__icon">{{ icon() }}</span>
+    @if (badge()) {
+      <span class="card__badge">{{ badge() }}</span>
+    }
+  </div>
+  <h3 class="card__title">
+    {{ titleFa() }}
+    @if (titleEn()) {
+      <span class="en card__title-en">{{ titleEn() }}</span>
+    }
+  </h3>
+  @if (subtitleFa()) {
+    <p class="card__subtitle">{{ subtitleFa() }}</p>
+  }
+  @if (metaFa()) {
+    <div class="card__meta">{{ metaFa() }}</div>
+  }
+  <span class="card__arrow" aria-hidden="true">←</span>
+</ng-template>

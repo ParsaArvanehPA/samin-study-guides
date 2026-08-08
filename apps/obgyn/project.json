@@ -1,0 +1,91 @@
+{
+  "name": "obgyn",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "application",
+  "prefix": "app",
+  "sourceRoot": "apps/obgyn/src",
+  "tags": [
+    "scope:obgyn"
+  ],
+  "targets": {
+    "build": {
+      "executor": "@angular/build:application",
+      "outputs": [
+        "{options.outputPath}"
+      ],
+      "defaultConfiguration": "production",
+      "options": {
+        "outputPath": "dist/apps/obgyn",
+        "browser": "apps/obgyn/src/main.ts",
+        "tsConfig": "apps/obgyn/tsconfig.app.json",
+        "inlineStyleLanguage": "scss",
+        "assets": [
+          {
+            "glob": "**/*",
+            "input": "apps/obgyn/public"
+          }
+        ],
+        "styles": [
+          "apps/obgyn/src/styles.scss"
+        ],
+        "stylePreprocessorOptions": {
+          "includePaths": [
+            "libs/shared/theme/src/lib"
+          ]
+        },
+        "server": "apps/obgyn/src/main.server.ts",
+        "ssr": {
+          "entry": "apps/obgyn/src/server.ts"
+        },
+        "outputMode": "static"
+      },
+      "configurations": {
+        "production": {
+          "budgets": [
+            {
+              "type": "initial",
+              "maximumWarning": "500kb",
+              "maximumError": "1mb"
+            },
+            {
+              "type": "anyComponentStyle",
+              "maximumWarning": "8kb",
+              "maximumError": "12kb"
+            }
+          ],
+          "outputHashing": "all"
+        },
+        "development": {
+          "optimization": false,
+          "extractLicenses": false,
+          "sourceMap": true
+        }
+      }
+    },
+    "serve": {
+      "continuous": true,
+      "executor": "@angular/build:dev-server",
+      "defaultConfiguration": "development",
+      "configurations": {
+        "production": {
+          "buildTarget": "obgyn:build:production"
+        },
+        "development": {
+          "buildTarget": "obgyn:build:development"
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint"
+    },
+    "serve-static": {
+      "continuous": true,
+      "executor": "@nx/web:file-server",
+      "options": {
+        "buildTarget": "obgyn:build",
+        "staticFilePath": "dist/apps/obgyn/browser",
+        "spa": true
+      }
+    }
+  }
+}

@@ -1,0 +1,31 @@
+<nav class="chapter-nav">
+  <details class="chapter-nav__jump">
+    <summary>
+      <span class="chapter-nav__position">{{ positionLabel() }}</span>
+      <span class="chapter-nav__caret">▾</span>
+    </summary>
+    <ul class="chapter-nav__list">
+      @for (c of chapters(); track c.id) {
+        <li>
+          <a [href]="c.href" [class.is-current]="c.id === currentId()">{{ c.titleFa }}</a>
+        </li>
+      }
+    </ul>
+  </details>
+
+  <div class="chapter-nav__buttons">
+    <a class="chapter-nav__home" [href]="courseHomeHref()">فهرست فصل‌ها</a>
+    <div class="chapter-nav__pn">
+      @if (prev(); as p) {
+        <a class="chapter-nav__btn" [href]="p.href">
+          <span>→</span> {{ p.titleFa }}
+        </a>
+      }
+      @if (next(); as n) {
+        <a class="chapter-nav__btn chapter-nav__btn--next" [href]="n.href">
+          {{ n.titleFa }} <span>←</span>
+        </a>
+      }
+    </div>
+  </div>
+</nav>

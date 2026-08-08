@@ -1,0 +1,42 @@
+<div class="page">
+  <header class="topbar no-print">
+    <a class="topbar__brand" href="../">
+      <span class="topbar__logo">✦</span>
+      StudyHub
+    </a>
+    <a class="topbar__course" href=".">راهنمای مامایی و زنان</a>
+    <lib-theme-toggle />
+  </header>
+
+  <main class="ref">
+    <h1 class="ref__title">اعداد و نقاط کلیدی برای امتحان</h1>
+
+    <div class="ref__card table-wrap">
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>پارامتر</th>
+            <th>مقدار</th>
+          </tr>
+        </thead>
+        <tbody>
+          @for (row of numbers; track row.param) {
+            <tr>
+              <td>{{ row.param }}</td>
+              <td class="en">{{ row.value }}</td>
+            </tr>
+          }
+        </tbody>
+      </table>
+    </div>
+
+    <div class="ref__card ref__facts">
+      <h2>★ نکات پرتکرار</h2>
+      <ul>
+        @for (f of facts; track f) {
+          <li>{{ f }}</li>
+        }
+      </ul>
+    </div>
+  </main>
+</div>

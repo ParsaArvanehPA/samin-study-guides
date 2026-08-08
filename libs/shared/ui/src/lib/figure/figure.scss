@@ -1,0 +1,35 @@
+:host {
+  display: block;
+}
+
+.fig {
+  margin: 22px 0;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  background: var(--surface-2);
+}
+
+img {
+  display: block;
+  width: 100%;
+  height: auto;
+  background: #fff;
+}
+
+figcaption {
+  padding: 12px 18px;
+  font-size: 13.5px;
+  color: var(--ink-soft);
+  border-top: 1px solid var(--border);
+}
+
+.src {
+  display: block;
+  font-family: var(--font-data);
+  color: var(--ink-faint);
+  font-size: 11.5px;
+  margin-top: 4px;
+  direction: ltr;
+  text-align: right;
+}
