@@ -2,12 +2,12 @@
   <div class="quiz__scorebar">
     <div class="quiz__score">
       <strong>{{ correctCount() }}</strong>
-      <span>/ {{ mcqCount() }} پاسخ درست</span>
+      <span>/ {{ gradedCount() }} پاسخ درست</span>
     </div>
     <div class="quiz__progress">
       <div
         class="quiz__progress-fill"
-        [style.width.%]="mcqCount() ? (answeredCount() / mcqCount()) * 100 : 0"
+        [style.width.%]="gradedCount() ? (answeredCount() / gradedCount()) * 100 : 0"
       ></div>
     </div>
     @if (answeredCount() > 0) {
@@ -19,7 +19,7 @@
     @for (q of questions(); track q.id; let qi = $index) {
       <li class="quiz__item">
         @if (isMcq(q)) {
-          <p class="quiz__question">
+          <p class="quiz__question" [class.quiz__question--vignette]="q.vignette">
             <span class="quiz__qnum">{{ qi + 1 }}</span>
             {{ q.question }}
           </p>
@@ -50,6 +50,137 @@
             >
               <strong>{{ selectedIndex(q.id) === q.correctIndex ? 'درست!' : 'نادرست.' }}</strong>
               {{ q.explanation }}
+            </div>
+          }
+        } @else if (isTrueFalse(q)) {
+          <p class="quiz__question">
+            <span class="quiz__qnum quiz__qnum--tf">د/ن</span>
+            {{ q.statement }}
+          </p>
+          <div class="quiz__tf-choices">
+            <button
+              type="button"
+              class="quiz__tf-btn"
+              [class.is-correct]="tfButtonState(q, true) === 'correct'"
+              [class.is-wrong]="tfButtonState(q, true) === 'wrong'"
+              [class.is-missed]="tfButtonState(q, true) === 'missed'"
+              [disabled]="tfSelected(q.id) !== undefined"
+              (click)="chooseTf(q, true)"
+            >
+              درست
+            </button>
+            <button
+              type="button"
+              class="quiz__tf-btn"
+              [class.is-correct]="tfButtonState(q, false) === 'correct'"
+              [class.is-wrong]="tfButtonState(q, false) === 'wrong'"
+              [class.is-missed]="tfButtonState(q, false) === 'missed'"
+              [disabled]="tfSelected(q.id) !== undefined"
+              (click)="chooseTf(q, false)"
+            >
+              نادرست
+            </button>
+          </div>
+          @if (tfSelected(q.id) !== undefined) {
+            <div class="quiz__explanation" [class.is-correct]="tfSelected(q.id) === q.isTrue">
+              <strong>{{ tfSelected(q.id) === q.isTrue ? 'درست!' : 'نادرست.' }}</strong>
+              {{ q.explanation }}
+            </div>
+          }
+        } @else if (isFill(q)) {
+          <p class="quiz__question quiz__question--fill">
+            <span class="quiz__qnum quiz__qnum--fill">جای‌خالی</span>
+            {{ fillParts(q)[0] }}
+            <span class="quiz__blank" [class.is-revealed]="isRevealed(q.id)">{{
+              isRevealed(q.id) ? q.answer : '．．．．．'
+            }}</span>
+            {{ fillParts(q)[1] }}
+          </p>
+          @if (!isRevealed(q.id)) {
+            <button type="button" class="quiz__reveal-btn" (click)="reveal(q.id)">
+              نمایش پاسخ
+            </button>
+          } @else if (q.explanation) {
+            <div class="quiz__explanation is-correct">{{ q.explanation }}</div>
+          }
+        } @else if (isMatch(q)) {
+          <p class="quiz__question">
+            <span class="quiz__qnum quiz__qnum--match">تطبیق</span>
+            {{ q.prompt }}
+          </p>
+          <div class="quiz__match">
+            <ul class="quiz__match-col">
+              @for (pair of q.pairs; track $index; let li = $index) {
+                <li>
+                  <button
+                    type="button"
+                    class="quiz__match-item"
+                    [class.is-selected]="matchSelectedLeft(q) === li"
+                    [class.is-matched]="isLeftMatched(q, li)"
+                    [disabled]="isLeftMatched(q, li)"
+                    (click)="selectLeft(q, li)"
+                  >
+                    {{ pair.left }}
+                  </button>
+                </li>
+              }
+            </ul>
+            <ul class="quiz__match-col">
+              @for (rp of matchRightOrder(q); track $index; let pos = $index) {
+                <li>
+                  <button
+                    type="button"
+                    class="quiz__match-item"
+                    [class.is-matched]="isRightMatched(q, pos)"
+                    [class.is-wrong]="isRightWrongPulse(q, pos)"
+                    [disabled]="isRightMatched(q, pos)"
+                    (click)="chooseRight(q, pos)"
+                  >
+                    {{ q.pairs[rp].right }}
+                  </button>
+                </li>
+              }
+            </ul>
+          </div>
+          @if (isMatchComplete(q)) {
+            <div class="quiz__explanation is-correct">
+              <strong>عالی!</strong>
+              همه‌ی موارد به‌درستی جفت شدند.
+            </div>
+          }
+        } @else if (isOrder(q)) {
+          <p class="quiz__question">
+            <span class="quiz__qnum quiz__qnum--order">ترتیب</span>
+            {{ q.prompt }}
+          </p>
+          <p class="quiz__order-hint">به ترتیب صحیح، از اول به آخر، کلیک کنید.</p>
+          <ol class="quiz__order-list">
+            @for (slot of orderSlots(q); track slot) {
+              <li>
+                <button
+                  type="button"
+                  class="quiz__order-item"
+                  [class.is-picked]="isOrderPicked(q, slot)"
+                  [class.is-correct]="isOrderComplete(q) && isSlotCorrect(q, slot)"
+                  [class.is-wrong]="isOrderComplete(q) && isOrderPicked(q, slot) && !isSlotCorrect(q, slot)"
+                  [disabled]="isOrderPicked(q, slot) || isOrderComplete(q)"
+                  (click)="pickOrderItem(q, slot)"
+                >
+                  @if (orderPickNumber(q, slot); as num) {
+                    <span class="quiz__order-num">{{ num }}</span>
+                  }
+                  <span class="quiz__order-text">{{ orderStepText(q, slot) }}</span>
+                </button>
+              </li>
+            }
+          </ol>
+          @if (isOrderComplete(q)) {
+            <div class="quiz__explanation" [class.is-correct]="isOrderFullyCorrect(q)">
+              <strong>{{ isOrderFullyCorrect(q) ? 'درست!' : 'نادرست.' }}</strong>
+              ترتیب صحیح: {{ q.steps.join(' ← ') }}
+              <button type="button" class="quiz__reset quiz__reset--inline" (click)="resetOrder(q)">
+                تلاش دوباره
+              </button>
             </div>
           }
         } @else {

@@ -55,3 +55,7 @@ vitest.config.*.timestamp*
 .nx/self-healing
 .nx/migrate-runs
 dist-deploy
+
+# Source archive: raw transcripts/figures derived from copyrighted textbook material.
+# Kept locally for reference/authoring — must never be committed or deployed publicly.
+/source-material
