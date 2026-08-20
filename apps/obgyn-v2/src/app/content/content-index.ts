@@ -56,6 +56,15 @@ export const CHAPTER_META: ChapterMeta[] = [
     summaryFa: 'تکنیک زایمان، دیستوشی شانه، مرحله‌ی سوم لیبر، و ترمیم پارگی‌ها/اپیزیاتومی — بر پایه‌ی فصل ۲۷ ویلیامز ۲۶.',
     readingMinutes: 24,
   },
+  {
+    id: 'breech-delivery',
+    order: 6,
+    code: 'ch28',
+    titleFa: 'زایمان بریچ',
+    titleEn: 'Singleton Breech Delivery',
+    summaryFa: 'طبقه‌بندی، انتخاب مسیر زایمان، تکنیک زایمان واژینال، و چرخش سفالیک خارجی — بر پایه‌ی فصل ۲۸ ویلیامز ۲۶.',
+    readingMinutes: 20,
+  },
 ];
 
 export const CHAPTER_LOADERS: Record<string, () => Promise<{ chapter: ChapterData }>> = {
@@ -64,4 +73,5 @@ export const CHAPTER_LOADERS: Record<string, () => Promise<{ chapter: ChapterDat
   'abnormal-labor': () => import('./abnormal-labor.data'),
   'intrapartum-assessment': () => import('./intrapartum-assessment.data'),
   'vaginal-delivery': () => import('./vaginal-delivery.data'),
+  'breech-delivery': () => import('./breech-delivery.data'),
 };
