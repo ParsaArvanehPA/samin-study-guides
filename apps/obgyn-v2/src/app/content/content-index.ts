@@ -47,6 +47,15 @@ export const CHAPTER_META: ChapterMeta[] = [
     summaryFa: 'پایش ضربان قلب جنین، تعاریف NICHD، طبقه‌بندی سه‌گروهی، و اقدامات کمکی — بر پایه‌ی فصل ۲۴ ویلیامز ۲۶.',
     readingMinutes: 26,
   },
+  {
+    id: 'vaginal-delivery',
+    order: 5,
+    code: 'ch27',
+    titleFa: 'زایمان واژینال',
+    titleEn: 'Vaginal Delivery',
+    summaryFa: 'تکنیک زایمان، دیستوشی شانه، مرحله‌ی سوم لیبر، و ترمیم پارگی‌ها/اپیزیاتومی — بر پایه‌ی فصل ۲۷ ویلیامز ۲۶.',
+    readingMinutes: 24,
+  },
 ];
 
 export const CHAPTER_LOADERS: Record<string, () => Promise<{ chapter: ChapterData }>> = {
@@ -54,4 +63,5 @@ export const CHAPTER_LOADERS: Record<string, () => Promise<{ chapter: ChapterDat
   'normal-labor': () => import('./normal-labor.data'),
   'abnormal-labor': () => import('./abnormal-labor.data'),
   'intrapartum-assessment': () => import('./intrapartum-assessment.data'),
+  'vaginal-delivery': () => import('./vaginal-delivery.data'),
 };
