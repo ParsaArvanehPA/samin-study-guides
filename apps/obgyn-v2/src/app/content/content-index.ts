@@ -20,8 +20,18 @@ export const CHAPTER_META: ChapterMeta[] = [
     summaryFa: 'سکون رحم، آمادگی برای لیبر، و ۴ فاز فیزیولوژیک لیبر و نفاس — بر پایه‌ی فصل ۲۱ ویلیامز ۲۶.',
     readingMinutes: 22,
   },
+  {
+    id: 'normal-labor',
+    order: 2,
+    code: 'ch22',
+    titleFa: 'لیبر طبیعی',
+    titleEn: 'Normal Labor',
+    summaryFa: 'تشخیص شروع لیبر، جهت‌گیری جنین، حرکات اصلی، مراحل زایمان، و اداره‌ی لیبر طبیعی — بر پایه‌ی فصل ۲۲ ویلیامز ۲۶.',
+    readingMinutes: 24,
+  },
 ];
 
 export const CHAPTER_LOADERS: Record<string, () => Promise<{ chapter: ChapterData }>> = {
   'physiology-of-labor': () => import('./physiology-of-labor.data'),
+  'normal-labor': () => import('./normal-labor.data'),
 };
