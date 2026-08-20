@@ -38,10 +38,20 @@ export const CHAPTER_META: ChapterMeta[] = [
     summaryFa: 'دیستوشی، اختلال عملکرد رحم، عدم‌تناسب فتوپلویک، و پرزانتاسیون‌های غیرطبیعی — بر پایه‌ی فصل ۲۳ ویلیامز ۲۶.',
     readingMinutes: 20,
   },
+  {
+    id: 'intrapartum-assessment',
+    order: 4,
+    code: 'ch24',
+    titleFa: 'بررسی هنگام زایمان',
+    titleEn: 'Intrapartum Assessment',
+    summaryFa: 'پایش ضربان قلب جنین، تعاریف NICHD، طبقه‌بندی سه‌گروهی، و اقدامات کمکی — بر پایه‌ی فصل ۲۴ ویلیامز ۲۶.',
+    readingMinutes: 26,
+  },
 ];
 
 export const CHAPTER_LOADERS: Record<string, () => Promise<{ chapter: ChapterData }>> = {
   'physiology-of-labor': () => import('./physiology-of-labor.data'),
   'normal-labor': () => import('./normal-labor.data'),
   'abnormal-labor': () => import('./abnormal-labor.data'),
+  'intrapartum-assessment': () => import('./intrapartum-assessment.data'),
 };
