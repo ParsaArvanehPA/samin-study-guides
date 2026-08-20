@@ -119,6 +119,15 @@ export const CHAPTER_META: ChapterMeta[] = [
     summaryFa: 'نقش ارگونومی و عوامل انسانی در احیای نوزاد، سه اصل نشست پیش از احیای ساختارمند، اهمیت تعیین نقش و انتظارات، طرح احیا و الگوی جانمایی گروه، جابه‌جایی نقش‌ها در احیای غیرقابل‌پیش‌بینی، و ارزیابی ساختار با شبیه‌سازی — بر پایه‌ی درس پیوست ۱۲ برنامه‌ی احیای نوزاد (NRP)، ویراست هشتم.',
     readingMinutes: 22,
   },
+  {
+    id: 'ch13-outside-delivery-room',
+    order: 13,
+    code: 'L13',
+    titleFa: 'احیای خارج از اتاق زایمان',
+    titleEn: 'Resuscitation Outside the Delivery Room',
+    summaryFa: 'اصول یکسان احیا خارج از بیمارستان، مدیریت دما و راه هوایی در تولد منزل، کالپس ناگهانی و پیش‌بینی‌نشده پس از تولد (SUPC) در بخش پس از زایمان، احیا در NICU (علل، DOPE، نسبت فشردن به تهویه)، و تفاوت راهنماهای NRP و PALS — بر پایه‌ی درس پیوست ۱۳ برنامه‌ی احیای نوزاد (NRP)، ویراست هشتم.',
+    readingMinutes: 28,
+  },
 ];
 
 export const CHAPTER_LOADERS: Record<string, () => Promise<{ chapter: ChapterData }>> = {
@@ -134,4 +143,5 @@ export const CHAPTER_LOADERS: Record<string, () => Promise<{ chapter: ChapterDat
   'ch10-special-considerations': () => import('./ch10-special-considerations.data'),
   'ch11-ethics-end-of-life': () => import('./ch11-ethics-end-of-life.data'),
   'ch12-team-performance': () => import('./ch12-team-performance.data'),
+  'ch13-outside-delivery-room': () => import('./ch13-outside-delivery-room.data'),
 };

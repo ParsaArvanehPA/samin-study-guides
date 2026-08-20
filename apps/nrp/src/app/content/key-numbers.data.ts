@@ -70,6 +70,10 @@ export const KEY_NUMBERS: KeyNumberRow[] = [
   { param: 'دقت تخمین وزن جنین', value: '±15%–20%' },
   { param: 'فاصله‌ی حداقل شنیدن قفسه‌ی سینه‌ی نوزاد در حال فوت', value: 'every ≥60 sec' },
   { param: 'اندازه‌ی نمونه گروه در الگوی نمونه‌ی تعیین نقش', value: '5 (up to 6–7 with more staff)' },
+  { param: 'افزایش مرگ پیرامون زایمان در تولد برنامه‌ریزی‌شده‌ی منزل', value: '2–3× vs. hospital/birth center' },
+  { param: 'بروز SUPC', value: '3–74 per 100,000 live births' },
+  { param: 'نسبت نوزادان NICU دریافت‌کننده‌ی احیای پیشرفته', value: '~1%–2% (~10× delivery-room rate)' },
+  { param: 'نسبت فشردن به تهویه — PALS (۱ احیاگر / ۲ احیاگر)', value: '30:2 / 15:1' },
 ];
 
 export const HIGH_YIELD_FACTS: string[] = [

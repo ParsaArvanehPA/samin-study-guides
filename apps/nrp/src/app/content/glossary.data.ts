@@ -96,4 +96,8 @@ export const GLOSSARY_TERMS: GlossaryTerm[] = [
   { fa: 'عوامل انسانی', en: 'Human factors' },
   { fa: 'طرح احیا', en: 'Resuscitation plan' },
   { fa: 'بار شناختی', en: 'Cognitive load' },
+  { fa: 'کالپس ناگهانی و پیش‌بینی‌نشده پس از تولد', en: 'Sudden unexpected postnatal collapse (SUPC)' },
+  { fa: 'مراقبت پیشرفته کودکان', en: 'Pediatric Advanced Life Support (PALS)' },
+  { fa: 'دیسپلازی برونکوپولمونر', en: 'Bronchopulmonary dysplasia (BPD)' },
+  { fa: 'کاتتر مرکزی از راه وریدهای محیطی', en: 'Peripherally inserted central catheter (PICC)' },
 ];
