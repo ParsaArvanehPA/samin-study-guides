@@ -110,6 +110,15 @@ export const CHAPTER_META: ChapterMeta[] = [
     summaryFa: 'اصول اخلاقی احیای نوزاد، نقش والدین در تصمیم‌گیری، ملاحظات آغاز یا عدم‌آغاز احیا در نوزاد بشدت نارس، بیانیه‌ی AMA، رویکرد به پیش‌آگهی نامطمئن، ملاحظات قانونی، خبر دادن مرگ به والدین، مراقبت از نوزاد در حال فوت، ملاقات‌های پیگیرانه، و حمایت از کارکنان — بر پایه‌ی درس ۱۱ برنامه‌ی احیای نوزاد (NRP)، ویراست هشتم.',
     readingMinutes: 26,
   },
+  {
+    id: 'ch12-team-performance',
+    order: 12,
+    code: 'L12',
+    titleFa: 'بهبود مهارت گروه احیا',
+    titleEn: 'Improving Resuscitation Team Performance',
+    summaryFa: 'نقش ارگونومی و عوامل انسانی در احیای نوزاد، سه اصل نشست پیش از احیای ساختارمند، اهمیت تعیین نقش و انتظارات، طرح احیا و الگوی جانمایی گروه، جابه‌جایی نقش‌ها در احیای غیرقابل‌پیش‌بینی، و ارزیابی ساختار با شبیه‌سازی — بر پایه‌ی درس پیوست ۱۲ برنامه‌ی احیای نوزاد (NRP)، ویراست هشتم.',
+    readingMinutes: 22,
+  },
 ];
 
 export const CHAPTER_LOADERS: Record<string, () => Promise<{ chapter: ChapterData }>> = {
@@ -124,4 +133,5 @@ export const CHAPTER_LOADERS: Record<string, () => Promise<{ chapter: ChapterDat
   'ch09-postresuscitation-care': () => import('./ch09-postresuscitation-care.data'),
   'ch10-special-considerations': () => import('./ch10-special-considerations.data'),
   'ch11-ethics-end-of-life': () => import('./ch11-ethics-end-of-life.data'),
+  'ch12-team-performance': () => import('./ch12-team-performance.data'),
 };

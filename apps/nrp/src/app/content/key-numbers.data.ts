@@ -69,6 +69,7 @@ export const KEY_NUMBERS: KeyNumberRow[] = [
   { param: 'دقت تعیین سن بارداری پس از سه‌ماهه‌ی نخست', value: '±1–2 weeks' },
   { param: 'دقت تخمین وزن جنین', value: '±15%–20%' },
   { param: 'فاصله‌ی حداقل شنیدن قفسه‌ی سینه‌ی نوزاد در حال فوت', value: 'every ≥60 sec' },
+  { param: 'اندازه‌ی نمونه گروه در الگوی نمونه‌ی تعیین نقش', value: '5 (up to 6–7 with more staff)' },
 ];
 
 export const HIGH_YIELD_FACTS: string[] = [

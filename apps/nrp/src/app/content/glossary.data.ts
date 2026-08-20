@@ -92,4 +92,8 @@ export const GLOSSARY_TERMS: GlossaryTerm[] = [
   { fa: 'رضایت آگاهانه', en: 'Informed consent' },
   { fa: 'مراقبت تسکینی', en: 'Palliative care' },
   { fa: 'فناوری کمک‌باروری', en: 'Assisted reproductive technology (ART)' },
+  { fa: 'ارگونومی', en: 'Ergonomics' },
+  { fa: 'عوامل انسانی', en: 'Human factors' },
+  { fa: 'طرح احیا', en: 'Resuscitation plan' },
+  { fa: 'بار شناختی', en: 'Cognitive load' },
 ];
