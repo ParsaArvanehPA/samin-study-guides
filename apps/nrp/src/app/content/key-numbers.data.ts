@@ -65,6 +65,10 @@ export const KEY_NUMBERS: KeyNumberRow[] = [
   { param: 'اندازه‌ی سوزن آسپیراسیون توراسنتز', value: '18–20 gauge' },
   { param: 'حجم سرنگ توراسنتز', value: '20–60 mL' },
   { param: 'حداقل فاصله‌ی گیره زدن بند ناف از نوزاد در گاستروشزی', value: '10–20 cm' },
+  { param: 'دقت تعیین سن بارداری در سه‌ماهه‌ی نخست (غیر از ART)', value: '±3–5 days' },
+  { param: 'دقت تعیین سن بارداری پس از سه‌ماهه‌ی نخست', value: '±1–2 weeks' },
+  { param: 'دقت تخمین وزن جنین', value: '±15%–20%' },
+  { param: 'فاصله‌ی حداقل شنیدن قفسه‌ی سینه‌ی نوزاد در حال فوت', value: 'every ≥60 sec' },
 ];
 
 export const HIGH_YIELD_FACTS: string[] = [

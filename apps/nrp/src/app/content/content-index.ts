@@ -101,6 +101,15 @@ export const CHAPTER_META: ChapterMeta[] = [
     summaryFa: 'پنوموتوراکس و افوزیون پلور (شناسایی و توراسنتز)، بسته شدن راه هوایی با ترشحات غلیظ، انسدادهای آناتومیک (توالی رابین، آترزی کوان)، ناهنجاری‌های ریوی جنینی (فتق دیافراگمی، هیپوپلازی ریه)، نوزاد تحت تأثیر مخدر مادر، میلومننگوسل، و نقایص دیواره شکمی (گاستروشزی، امفالوسل) — بر پایه‌ی درس ۱۰ برنامه‌ی احیای نوزاد (NRP)، ویراست هشتم.',
     readingMinutes: 32,
   },
+  {
+    id: 'ch11-ethics-end-of-life',
+    order: 11,
+    code: 'L11',
+    titleFa: 'اصول اخلاقی و مراقبت در واپسین دم زندگی',
+    titleEn: 'Ethics and End-of-Life Care',
+    summaryFa: 'اصول اخلاقی احیای نوزاد، نقش والدین در تصمیم‌گیری، ملاحظات آغاز یا عدم‌آغاز احیا در نوزاد بشدت نارس، بیانیه‌ی AMA، رویکرد به پیش‌آگهی نامطمئن، ملاحظات قانونی، خبر دادن مرگ به والدین، مراقبت از نوزاد در حال فوت، ملاقات‌های پیگیرانه، و حمایت از کارکنان — بر پایه‌ی درس ۱۱ برنامه‌ی احیای نوزاد (NRP)، ویراست هشتم.',
+    readingMinutes: 26,
+  },
 ];
 
 export const CHAPTER_LOADERS: Record<string, () => Promise<{ chapter: ChapterData }>> = {
@@ -114,4 +123,5 @@ export const CHAPTER_LOADERS: Record<string, () => Promise<{ chapter: ChapterDat
   'ch08-preterm': () => import('./ch08-preterm.data'),
   'ch09-postresuscitation-care': () => import('./ch09-postresuscitation-care.data'),
   'ch10-special-considerations': () => import('./ch10-special-considerations.data'),
+  'ch11-ethics-end-of-life': () => import('./ch11-ethics-end-of-life.data'),
 };

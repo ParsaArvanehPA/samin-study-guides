@@ -85,4 +85,11 @@ export const GLOSSARY_TERMS: GlossaryTerm[] = [
   { fa: 'میلومننگوسل', en: 'Myelomeningocele' },
   { fa: 'گاستروشزی', en: 'Gastroschisis' },
   { fa: 'امفالوسل', en: 'Omphalocele' },
+  { fa: 'خودمختاری', en: 'Autonomy' },
+  { fa: 'خیررسانی', en: 'Beneficence' },
+  { fa: 'ضرر نرساندن', en: 'Nonmaleficence' },
+  { fa: 'عدالت', en: 'Justice' },
+  { fa: 'رضایت آگاهانه', en: 'Informed consent' },
+  { fa: 'مراقبت تسکینی', en: 'Palliative care' },
+  { fa: 'فناوری کمک‌باروری', en: 'Assisted reproductive technology (ART)' },
 ];
