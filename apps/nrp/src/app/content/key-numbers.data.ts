@@ -46,6 +46,12 @@ export const KEY_NUMBERS: KeyNumberRow[] = [
   { param: 'FiO2 در آغاز فشردن قفسه‌ی سینه', value: '100%' },
   { param: 'زمان ارزیابی مجدد ضربان قلب پس از آغاز فشردن', value: '60 sec' },
   { param: 'آستانه‌ی توقف فشردن قفسه‌ی سینه', value: 'HR ≥60 bpm' },
+  { param: 'غلظت اپی‌نفرین در احیای نوزاد', value: '0.1 mg/mL (1 mg/10 mL)' },
+  { param: 'مقدار اپی‌نفرین درون‌سیاهرگی/استخوانی', value: '0.02 mg/kg (0.2 mL/kg)' },
+  { param: 'مقدار اپی‌نفرین درون‌نای', value: '0.1 mg/kg (1 mL/kg)' },
+  { param: 'فاصله‌ی تکرار اپی‌نفرین', value: 'every 3–5 min' },
+  { param: 'مقدار نخستین حجم‌افزا', value: '10 mL/kg over 5–10 min' },
+  { param: 'زمان قابل‌قبول برای مدنظر داشتن قطع احیا', value: '~20 min without detectable heart rate' },
 ];
 
 export const HIGH_YIELD_FACTS: string[] = [

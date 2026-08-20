@@ -52,4 +52,10 @@ export const GLOSSARY_TERMS: GlossaryTerm[] = [
   { fa: 'فشردن قفسه سینه', en: 'Chest compressions' },
   { fa: 'روش دو‌شست', en: 'Two-thumb technique' },
   { fa: 'زائده جناغی', en: 'Xiphoid process' },
+  { fa: 'اپی‌نفرین', en: 'Epinephrine' },
+  { fa: 'حجم‌افزا', en: 'Volume expander' },
+  { fa: 'شوک هیپوولمیک', en: 'Hypovolemic shock' },
+  { fa: 'سوزن درون‌استخوانی', en: 'Intraosseous (IO) needle' },
+  { fa: 'خار درشت‌نی', en: 'Tibial tuberosity' },
+  { fa: 'ژله وارتون', en: "Wharton's jelly" },
 ];

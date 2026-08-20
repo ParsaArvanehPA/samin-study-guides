@@ -65,6 +65,15 @@ export const CHAPTER_META: ChapterMeta[] = [
     summaryFa: 'فیزیولوژی و موارد آغاز فشردن قفسه‌ی سینه، محل قرارگیری فرد فشارنده، روش دو‌شست، عمق و سرعت فشردن، هماهنگی ۳ به ۱ با تهویه، غلظت اکسیژن، ارزیابی هر ۶۰ ثانیه، مخفف CARDIO، معیارهای قطع فشردن، و چرایی توالی A-B-C — بر پایه‌ی درس ۶ برنامه‌ی احیای نوزاد (NRP)، ویراست هشتم.',
     readingMinutes: 22,
   },
+  {
+    id: 'ch07-medications',
+    order: 7,
+    code: 'L7',
+    titleFa: 'داروها',
+    titleEn: 'Medications',
+    summaryFa: 'اپی‌نفرین (مکانیسم، موارد، غلظت، راه، مقدار و روش تجویز)، حجم‌افزا در شوک هیپوولمیک، جاگذاری فوری کاتتر سیاهرگ نافی و سوزن درون‌استخوانی، پرسش‌های بهبود‌نیافتن ضربان قلب، و ملاحظات توقف احیا — بر پایه‌ی درس ۷ برنامه‌ی احیای نوزاد (NRP)، ویراست هشتم.',
+    readingMinutes: 28,
+  },
 ];
 
 export const CHAPTER_LOADERS: Record<string, () => Promise<{ chapter: ChapterData }>> = {
@@ -74,4 +83,5 @@ export const CHAPTER_LOADERS: Record<string, () => Promise<{ chapter: ChapterDat
   'ch04-ppv': () => import('./ch04-ppv.data'),
   'ch05-intubation': () => import('./ch05-intubation.data'),
   'ch06-chest-compressions': () => import('./ch06-chest-compressions.data'),
+  'ch07-medications': () => import('./ch07-medications.data'),
 };
