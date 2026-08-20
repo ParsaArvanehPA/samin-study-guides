@@ -74,6 +74,15 @@ export const CHAPTER_META: ChapterMeta[] = [
     summaryFa: 'تشخیص بارداری، ویزیت‌های دوران بارداری، غربالگری‌های روتین، تغذیه و ایمن‌سازی — بر پایه‌ی فصل ۱۰ ویلیامز ۲۶.',
     readingMinutes: 24,
   },
+  {
+    id: 'puerperium',
+    order: 8,
+    code: 'ch36',
+    titleFa: 'دوره‌ی نفاس',
+    titleEn: 'The Puerperium',
+    summaryFa: 'بازگشت دستگاه تناسلی، شیردهی، مراقبت بیمارستانی/منزل، و عوارض نفاس — بر پایه‌ی فصل ۳۶ ویلیامز ۲۶.',
+    readingMinutes: 22,
+  },
 ];
 
 export const CHAPTER_LOADERS: Record<string, () => Promise<{ chapter: ChapterData }>> = {
@@ -84,4 +93,5 @@ export const CHAPTER_LOADERS: Record<string, () => Promise<{ chapter: ChapterDat
   'vaginal-delivery': () => import('./vaginal-delivery.data'),
   'breech-delivery': () => import('./breech-delivery.data'),
   'prenatal-care': () => import('./prenatal-care.data'),
+  'puerperium': () => import('./puerperium.data'),
 };
