@@ -17,4 +17,10 @@ export const GLOSSARY_TERMS: GlossaryTerm[] = [
   { fa: 'ارتباط حلقه‌بسته', en: 'Closed-loop communication' },
   { fa: 'آگاهی از موقعیت', en: 'Situational awareness' },
   { fa: 'بهبود کیفیت', en: 'Quality improvement (QI)' },
+  { fa: 'نشست پیش از احیا', en: 'Briefing' },
+  { fa: 'جمع‌بندی پس از احیا', en: 'Debriefing' },
+  { fa: 'آگاهی بر موقعیت', en: 'Situational awareness' },
+  { fa: 'کاتتر سیاهرگ نافی', en: 'Umbilical venous catheter (UVC)' },
+  { fa: 'دیستوشی شانه', en: 'Shoulder dystocia' },
+  { fa: 'کوریوآمنیونیت', en: 'Chorioamnionitis' },
 ];
