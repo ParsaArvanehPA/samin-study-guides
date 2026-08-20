@@ -100,4 +100,10 @@ export const GLOSSARY_TERMS: GlossaryTerm[] = [
   { fa: 'مراقبت پیشرفته کودکان', en: 'Pediatric Advanced Life Support (PALS)' },
   { fa: 'دیسپلازی برونکوپولمونر', en: 'Bronchopulmonary dysplasia (BPD)' },
   { fa: 'کاتتر مرکزی از راه وریدهای محیطی', en: 'Peripherally inserted central catheter (PICC)' },
+  { fa: 'بهبود کیفیت', en: 'Quality improvement (QI)' },
+  { fa: 'شاخص تعدیل‌کننده', en: 'Balancing measure' },
+  { fa: 'نمودار اجرا', en: 'Run chart' },
+  { fa: 'نمودار نظارت', en: 'Control chart (SPC)' },
+  { fa: 'چرخه‌ی برنامه‌ریزی-انجام-بررسی-اصلاح', en: 'PDCA cycle (Plan-Do-Check-Adjust)' },
+  { fa: 'هدف SMART', en: 'SMART goal' },
 ];

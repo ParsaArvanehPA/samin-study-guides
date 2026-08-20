@@ -74,6 +74,8 @@ export const KEY_NUMBERS: KeyNumberRow[] = [
   { param: 'بروز SUPC', value: '3–74 per 100,000 live births' },
   { param: 'نسبت نوزادان NICU دریافت‌کننده‌ی احیای پیشرفته', value: '~1%–2% (~10× delivery-room rate)' },
   { param: 'نسبت فشردن به تهویه — PALS (۱ احیاگر / ۲ احیاگر)', value: '30:2 / 15:1' },
+  { param: 'تعداد اهداف گسترده‌ی IOM برای مراقبت سلامت', value: '6 (safe, effective, patient-centered, timely, efficient, equitable)' },
+  { param: 'حداقل نقاط داده برای محاسبه‌ی حدود UCL/LCL', value: '15–20 data points' },
 ];
 
 export const HIGH_YIELD_FACTS: string[] = [

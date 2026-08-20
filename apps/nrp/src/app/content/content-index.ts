@@ -128,6 +128,15 @@ export const CHAPTER_META: ChapterMeta[] = [
     summaryFa: 'اصول یکسان احیا خارج از بیمارستان، مدیریت دما و راه هوایی در تولد منزل، کالپس ناگهانی و پیش‌بینی‌نشده پس از تولد (SUPC) در بخش پس از زایمان، احیا در NICU (علل، DOPE، نسبت فشردن به تهویه)، و تفاوت راهنماهای NRP و PALS — بر پایه‌ی درس پیوست ۱۳ برنامه‌ی احیای نوزاد (NRP)، ویراست هشتم.',
     readingMinutes: 28,
   },
+  {
+    id: 'ch14-quality-improvement',
+    order: 14,
+    code: 'L14',
+    titleFa: 'بهبود کیفیت در گروه احیا',
+    titleEn: 'Quality Improvement in Resuscitation',
+    summaryFa: 'نقش بهبود کیفیت در احیای نوزاد، شناسایی و بیان مشکل، تشکیل گروه چندرشته‌ای، تعیین هدف SMART بر پایه‌ی ۶ هدف IOM، داده‌ها و شاخص تعدیل‌کننده، نمودار اجرا و نمودار نظارت (SPC)، چرخه‌ی PDCA، و تفاوت طرح پژوهشی با طرح بهبود کیفیت — بر پایه‌ی درس پیوست ۱۴ برنامه‌ی احیای نوزاد (NRP)، ویراست هشتم.',
+    readingMinutes: 26,
+  },
 ];
 
 export const CHAPTER_LOADERS: Record<string, () => Promise<{ chapter: ChapterData }>> = {
@@ -144,4 +153,5 @@ export const CHAPTER_LOADERS: Record<string, () => Promise<{ chapter: ChapterDat
   'ch11-ethics-end-of-life': () => import('./ch11-ethics-end-of-life.data'),
   'ch12-team-performance': () => import('./ch12-team-performance.data'),
   'ch13-outside-delivery-room': () => import('./ch13-outside-delivery-room.data'),
+  'ch14-quality-improvement': () => import('./ch14-quality-improvement.data'),
 };
