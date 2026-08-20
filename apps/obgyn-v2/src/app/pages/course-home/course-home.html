@@ -1,0 +1,44 @@
+<div class="page">
+  <header class="topbar no-print">
+    <a class="topbar__brand" href="../">
+      <span class="topbar__logo">✦</span>
+      StudyHub
+    </a>
+    <lib-theme-toggle />
+  </header>
+
+  <main class="home">
+    <div class="home__intro">
+      <p class="home__eyebrow">OBGYN · Williams Obstetrics, 26th Ed.</p>
+      <h1 class="home__title">راهنمای مامایی و زنان (ویلیامز ۲۶)</h1>
+      <p class="home__sub">
+        ۱۰ فصل، نوشته‌شده مستقیماً بر پایه‌ی متن کامل کتاب ویلیامز ۲۰۲۲ (ویرایش
+        ۲۶)، همراه با خودآزمایی — برای مرور دقیق پیش از امتحان یا مطالعه‌ی
+        عمیق‌تر.
+      </p>
+    </div>
+
+    <div class="home__grid">
+      @for (c of chapters; track c.id) {
+        <lib-course-card
+          variant="flat"
+          [titleFa]="c.titleFa"
+          [titleEn]="c.titleEn"
+          [subtitleFa]="c.summaryFa"
+          [metaFa]="c.readingMinutes + ' دقیقه'"
+          [badge]="'فصل ' + c.order"
+          icon="📖"
+          [href]="'chapters/' + c.id"
+        />
+      }
+    </div>
+
+    <div class="home__reference">
+      <h2>مرجع</h2>
+      <div class="home__reference-links">
+        <a href="reference/key-numbers">اعداد کلیدی برای امتحان</a>
+        <a href="reference/glossary">واژه‌نامه‌ی دوزبانه</a>
+      </div>
+    </div>
+  </main>
+</div>

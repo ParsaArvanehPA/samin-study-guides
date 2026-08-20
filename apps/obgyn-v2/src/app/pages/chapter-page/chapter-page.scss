@@ -1,0 +1,170 @@
+@use 'tokens/surfaces' as surf;
+
+:host {
+  display: block;
+}
+
+.page {
+  min-height: 100vh;
+  background: var(--bg);
+}
+
+.topbar {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 18px 24px;
+
+  a {
+    text-decoration: none;
+  }
+}
+
+.topbar__brand {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 15px;
+  color: var(--ink);
+}
+.topbar__logo {
+  color: var(--accent);
+}
+
+.topbar__course {
+  color: var(--ink-soft);
+  font-size: 14px;
+  border-inline-start: 1px solid var(--border);
+  padding-inline-start: 16px;
+}
+
+lib-theme-toggle {
+  margin-inline-start: auto;
+}
+
+.chapter {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 8px 24px 100px;
+}
+
+.chapter__head {
+  margin: 20px 0 8px;
+}
+
+.chapter__eyebrow {
+  font-family: var(--font-data);
+  direction: ltr;
+  text-align: right;
+  font-size: 13px;
+  letter-spacing: 0.03em;
+  color: var(--accent);
+  margin: 0 0 8px;
+}
+
+.chapter__title {
+  font-family: var(--font-display);
+  font-size: clamp(26px, 4vw, 36px);
+  margin: 0;
+  text-wrap: balance;
+}
+
+.chapter__body {
+  @include surf.card;
+  padding: 8px 36px 20px;
+  margin-top: 8px;
+}
+
+.chapter__section {
+  padding: 22px 0;
+  border-top: 1px solid var(--border-soft);
+
+  &:first-child {
+    border-top: none;
+  }
+
+  h2 {
+    font-size: 21px;
+    margin: 0 0 14px;
+  }
+}
+
+.chapter__paragraph {
+  color: var(--ink);
+  font-size: 16px;
+  line-height: 1.9;
+
+  ::ng-deep p {
+    margin: 12px 0;
+  }
+  ::ng-deep ul,
+  ::ng-deep ol {
+    margin: 10px 0;
+    padding-inline-start: 26px;
+  }
+  ::ng-deep li {
+    margin: 6px 0;
+  }
+  ::ng-deep h3 {
+    font-size: 17px;
+    margin: 22px 0 8px;
+    padding-inline-start: 12px;
+    border-inline-start: 4px solid var(--accent);
+  }
+  ::ng-deep strong {
+    color: var(--ink);
+  }
+}
+
+.table-wrap {
+  overflow-x: auto;
+  margin: 16px 0;
+}
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14.5px;
+
+  caption {
+    text-align: start;
+    font-size: 13px;
+    color: var(--ink-faint);
+    margin-bottom: 8px;
+  }
+  th,
+  td {
+    border: 1px solid var(--border);
+    padding: 9px 12px;
+    text-align: start;
+    vertical-align: top;
+  }
+  thead th {
+    background: var(--surface-2);
+    font-size: 13px;
+    color: var(--ink-soft);
+  }
+}
+.table-note {
+  font-size: 12.5px;
+  color: var(--ink-faint);
+  margin-top: 6px;
+}
+
+.chapter__quiz {
+  margin-top: 36px;
+}
+.chapter__quiz-title {
+  font-family: var(--font-display);
+  font-size: 24px;
+  margin-bottom: 18px;
+}
+
+@media (max-width: 640px) {
+  .chapter__body {
+    padding: 8px 18px 16px;
+  }
+}

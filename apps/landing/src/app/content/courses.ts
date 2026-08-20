@@ -13,6 +13,17 @@ export const COURSES: CourseMeta[] = [
     chapterCount: 12,
   },
   {
+    id: 'obgyn-v2',
+    titleFa: 'مامایی و زنان (ویلیامز ۲۶)',
+    titleEn: 'OBGYN (Williams 26e)',
+    descriptionFa:
+      '۱۰ فصل، نوشته‌شده مستقیماً از متن کامل ویلیامز ۲۰۲۲ (ویرایش ۲۶)، همراه با خودآزمایی.',
+    href: 'obgyn-v2/',
+    status: 'live',
+    icon: '📘',
+    chapterCount: 10,
+  },
+  {
     id: 'pharmacology',
     titleFa: 'فارماکولوژی',
     titleEn: 'Pharmacology',
