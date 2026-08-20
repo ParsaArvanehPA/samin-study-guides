@@ -58,4 +58,11 @@ export const GLOSSARY_TERMS: GlossaryTerm[] = [
   { fa: 'سوزن درون‌استخوانی', en: 'Intraosseous (IO) needle' },
   { fa: 'خار درشت‌نی', en: 'Tibial tuberosity' },
   { fa: 'ژله وارتون', en: "Wharton's jelly" },
+  { fa: 'هیپوترمی', en: 'Hypothermia' },
+  { fa: 'کمپلیانس ریه', en: 'Lung compliance' },
+  { fa: 'سورفاکتانت', en: 'Surfactant' },
+  { fa: 'تجویز کمتر تهاجمی سورفاکتانت', en: 'Less Invasive Surfactant Administration (LISA)' },
+  { fa: 'لوله‌گذاری-سورفاکتانت-خروج لوله', en: 'Intubate-Surfactant-Extubate (INSURE)' },
+  { fa: 'وضعیت ترندلنبرگ', en: 'Trendelenburg position' },
+  { fa: 'گرم‌کننده‌ی خودتنظیم‌شونده', en: 'Servo-controlled warmer' },
 ];

@@ -74,6 +74,15 @@ export const CHAPTER_META: ChapterMeta[] = [
     summaryFa: 'اپی‌نفرین (مکانیسم، موارد، غلظت، راه، مقدار و روش تجویز)، حجم‌افزا در شوک هیپوولمیک، جاگذاری فوری کاتتر سیاهرگ نافی و سوزن درون‌استخوانی، پرسش‌های بهبود‌نیافتن ضربان قلب، و ملاحظات توقف احیا — بر پایه‌ی درس ۷ برنامه‌ی احیای نوزاد (NRP)، ویراست هشتم.',
     readingMinutes: 28,
   },
+  {
+    id: 'ch08-preterm',
+    order: 8,
+    code: 'L8',
+    titleFa: 'احیا و پایدارسازی نوزادان نارس',
+    titleEn: 'Resuscitation and Stabilization of Preterm Infants',
+    summaryFa: 'چرایی آسیب‌پذیری بیشتر نوزادان نارس، منابع اضافی موردنیاز، راهکارهای حفظ دما (پوشش پلی‌اتیلن، تشک گرمایی)، نکات ویژه‌ی تهویه‌ی کمکی و CPAP زودرس، تجویز سورفاکتانت (LISA/INSURE)، هدف اکسیژن، احتیاط‌های کاهش آسیب عصبی، و پایش پس از پایدارسازی — بر پایه‌ی درس ۸ برنامه‌ی احیای نوزاد (NRP)، ویراست هشتم.',
+    readingMinutes: 26,
+  },
 ];
 
 export const CHAPTER_LOADERS: Record<string, () => Promise<{ chapter: ChapterData }>> = {
@@ -84,4 +93,5 @@ export const CHAPTER_LOADERS: Record<string, () => Promise<{ chapter: ChapterDat
   'ch05-intubation': () => import('./ch05-intubation.data'),
   'ch06-chest-compressions': () => import('./ch06-chest-compressions.data'),
   'ch07-medications': () => import('./ch07-medications.data'),
+  'ch08-preterm': () => import('./ch08-preterm.data'),
 };

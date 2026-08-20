@@ -52,6 +52,13 @@ export const KEY_NUMBERS: KeyNumberRow[] = [
   { param: 'فاصله‌ی تکرار اپی‌نفرین', value: 'every 3–5 min' },
   { param: 'مقدار نخستین حجم‌افزا', value: '10 mL/kg over 5–10 min' },
   { param: 'زمان قابل‌قبول برای مدنظر داشتن قطع احیا', value: '~20 min without detectable heart rate' },
+  { param: 'دمای اتاق احیا برای تولد نارس', value: '23–25°C' },
+  { param: 'سن بارداری آستانه‌ی استفاده از پوشش پلاستیکی/تشک گرمایی', value: '<32 weeks (up to 35 in some cases)' },
+  { param: 'زمان فعال‌سازی تشک گرمایی پیش از تولد', value: '~5 min' },
+  { param: 'فشار بادشدن نخستین در نوزاد نارس', value: '20–25 cmH2O' },
+  { param: 'سقف PIP توصیه‌شده با ماسک صورت در نوزاد نارس', value: '30 cmH2O' },
+  { param: 'اکسیژن نخستین برای احیای نوزاد نارس (<35 هفته)', value: '21%–30%' },
+  { param: 'آستانه‌ی سن بارداری برای در دسترس بودن سورفاکتانت', value: '<30 weeks' },
 ];
 
 export const HIGH_YIELD_FACTS: string[] = [
