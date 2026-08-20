@@ -40,6 +40,12 @@ export const KEY_NUMBERS: KeyNumberRow[] = [
   { param: 'مدت ساکشن مستقیم نای هنگام خارج کردن کاتتر', value: '3–5 sec' },
   { param: 'اندازه‌ی لوله‌ی نای — وزن <1000 گرم', value: '2.5 mm ID' },
   { param: 'اندازه‌ی لوله‌ی نای — وزن >2000 گرم', value: '3.5 mm ID' },
+  { param: 'آستانه‌ی شروع فشردن قفسه‌ی سینه', value: 'HR <60 bpm after 30 sec effective PPV' },
+  { param: 'عمق فشردن قفسه‌ی سینه', value: '~1/3 AP chest diameter' },
+  { param: 'نسبت فشردن به تهویه', value: '3:1 (90 compressions + 30 breaths/min)' },
+  { param: 'FiO2 در آغاز فشردن قفسه‌ی سینه', value: '100%' },
+  { param: 'زمان ارزیابی مجدد ضربان قلب پس از آغاز فشردن', value: '60 sec' },
+  { param: 'آستانه‌ی توقف فشردن قفسه‌ی سینه', value: 'HR ≥60 bpm' },
 ];
 
 export const HIGH_YIELD_FACTS: string[] = [

@@ -56,6 +56,15 @@ export const CHAPTER_META: ChapterMeta[] = [
     summaryFa: 'موارد لوله‌گذاری، آناتومی راه هوایی، تجهیزات و انتخاب اندازه‌ی لوله، وضعیت دادن نوزاد، روش لارنگوسکوپی و ورود لوله، تأیید جاگذاری با آشکارساز CO2، عمق فرو بردن لوله (NTL)، محکم کردن لوله، ساکشن مستقیم نای، و مخفف DOPE — بر پایه‌ی درس ۵ برنامه‌ی احیای نوزاد (NRP)، ویراست هشتم.',
     readingMinutes: 30,
   },
+  {
+    id: 'ch06-chest-compressions',
+    order: 6,
+    code: 'L6',
+    titleFa: 'فشردن قفسه سینه',
+    titleEn: 'Chest Compressions',
+    summaryFa: 'فیزیولوژی و موارد آغاز فشردن قفسه‌ی سینه، محل قرارگیری فرد فشارنده، روش دو‌شست، عمق و سرعت فشردن، هماهنگی ۳ به ۱ با تهویه، غلظت اکسیژن، ارزیابی هر ۶۰ ثانیه، مخفف CARDIO، معیارهای قطع فشردن، و چرایی توالی A-B-C — بر پایه‌ی درس ۶ برنامه‌ی احیای نوزاد (NRP)، ویراست هشتم.',
+    readingMinutes: 22,
+  },
 ];
 
 export const CHAPTER_LOADERS: Record<string, () => Promise<{ chapter: ChapterData }>> = {
@@ -64,4 +73,5 @@ export const CHAPTER_LOADERS: Record<string, () => Promise<{ chapter: ChapterDat
   'ch03-initial-steps': () => import('./ch03-initial-steps.data'),
   'ch04-ppv': () => import('./ch04-ppv.data'),
   'ch05-intubation': () => import('./ch05-intubation.data'),
+  'ch06-chest-compressions': () => import('./ch06-chest-compressions.data'),
 };

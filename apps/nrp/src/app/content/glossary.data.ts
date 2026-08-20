@@ -49,4 +49,7 @@ export const GLOSSARY_TERMS: GlossaryTerm[] = [
   { fa: 'فاصله بینی تا تراگوس', en: 'Nasal-tragus length (NTL)' },
   { fa: 'مکنده مکونیوم', en: 'Meconium aspirator' },
   { fa: 'ویدئولارنگوسکوپ', en: 'Video laryngoscope' },
+  { fa: 'فشردن قفسه سینه', en: 'Chest compressions' },
+  { fa: 'روش دو‌شست', en: 'Two-thumb technique' },
+  { fa: 'زائده جناغی', en: 'Xiphoid process' },
 ];
