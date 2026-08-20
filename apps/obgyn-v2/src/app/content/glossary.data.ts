@@ -132,4 +132,13 @@ export const GLOSSARY_TERMS: GlossaryTerm[] = [
   { fa: 'آنسفالوپاتی ورنیکه', en: 'Wernicke encephalopathy' },
   { fa: 'کلپروتکتین مدفوع', en: 'Fecal calprotectin' },
   { fa: 'ریفلاکس معده‌مروی', en: 'Gastroesophageal reflux disease (GERD)' },
+  { fa: 'شاخص مایع آمنیوتیک', en: 'Amniotic fluid index (AFI)' },
+  { fa: 'عمیق‌ترین جیب عمودی', en: 'Deepest vertical pocket (DVP)' },
+  { fa: 'هیدرآمنیوس / الیگوهیدرآمنیوس', en: 'Hydramnios / Oligohydramnios' },
+  { fa: 'آنیدرآمنیوس', en: 'Anhydramnios' },
+  { fa: 'هیدرآمنیوس متناقض', en: 'Paradoxical hydramnios' },
+  { fa: 'آمنیورداکشن', en: 'Amnioreduction' },
+  { fa: 'توالی دکولمان مزمن-الیگوهیدرآمنیوس', en: 'Chronic abruption-oligohydramnios sequence (CAOS)' },
+  { fa: 'سندرم انتقال خون دوقلو-به-دوقلو', en: 'Twin-twin transfusion syndrome (TTTS)' },
+  { fa: 'سندرم پاتر', en: 'Potter sequence' },
 ];

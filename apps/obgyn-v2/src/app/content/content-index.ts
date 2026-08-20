@@ -92,6 +92,15 @@ export const CHAPTER_META: ChapterMeta[] = [
     summaryFa: 'هایپرمزیس، ریفلاکس و زخم پپتیک، بیماری التهابی روده، انسداد روده، و آپاندیسیت در بارداری — بر پایه‌ی فصل ۵۵ ویلیامز ۲۶.',
     readingMinutes: 18,
   },
+  {
+    id: 'amniotic-fluid-volume',
+    order: 10,
+    code: 'ch14',
+    titleFa: 'اختلالات حجم مایع آمنیوتیک',
+    titleEn: 'Amnionic Fluid Volume Disorders',
+    summaryFa: 'فیزیولوژی حجم مایع آمنیوتیک، هیدرآمنیوس، و الیگوهیدرآمنیوس — بر پایه‌ی فصل ۱۴ ویلیامز ۲۶ (تصویربرداری مامایی).',
+    readingMinutes: 14,
+  },
 ];
 
 export const CHAPTER_LOADERS: Record<string, () => Promise<{ chapter: ChapterData }>> = {
@@ -104,4 +113,5 @@ export const CHAPTER_LOADERS: Record<string, () => Promise<{ chapter: ChapterDat
   'prenatal-care': () => import('./prenatal-care.data'),
   'puerperium': () => import('./puerperium.data'),
   'gi-disorders': () => import('./gi-disorders.data'),
+  'amniotic-fluid-volume': () => import('./amniotic-fluid-volume.data'),
 };
