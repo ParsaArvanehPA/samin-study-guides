@@ -1,0 +1,91 @@
+{
+  "name": "nrp",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "application",
+  "prefix": "app",
+  "sourceRoot": "apps/nrp/src",
+  "tags": [
+    "scope:nrp"
+  ],
+  "targets": {
+    "build": {
+      "executor": "@angular/build:application",
+      "outputs": [
+        "{options.outputPath}"
+      ],
+      "defaultConfiguration": "production",
+      "options": {
+        "outputPath": "dist/apps/nrp",
+        "browser": "apps/nrp/src/main.ts",
+        "tsConfig": "apps/nrp/tsconfig.app.json",
+        "inlineStyleLanguage": "scss",
+        "assets": [
+          {
+            "glob": "**/*",
+            "input": "apps/nrp/public"
+          }
+        ],
+        "styles": [
+          "apps/nrp/src/styles.scss"
+        ],
+        "stylePreprocessorOptions": {
+          "includePaths": [
+            "libs/shared/theme/src/lib"
+          ]
+        },
+        "server": "apps/nrp/src/main.server.ts",
+        "ssr": {
+          "entry": "apps/nrp/src/server.ts"
+        },
+        "outputMode": "static"
+      },
+      "configurations": {
+        "production": {
+          "budgets": [
+            {
+              "type": "initial",
+              "maximumWarning": "500kb",
+              "maximumError": "1mb"
+            },
+            {
+              "type": "anyComponentStyle",
+              "maximumWarning": "8kb",
+              "maximumError": "12kb"
+            }
+          ],
+          "outputHashing": "all"
+        },
+        "development": {
+          "optimization": false,
+          "extractLicenses": false,
+          "sourceMap": true
+        }
+      }
+    },
+    "serve": {
+      "continuous": true,
+      "executor": "@angular/build:dev-server",
+      "defaultConfiguration": "development",
+      "configurations": {
+        "production": {
+          "buildTarget": "nrp:build:production"
+        },
+        "development": {
+          "buildTarget": "nrp:build:development"
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint"
+    },
+    "serve-static": {
+      "continuous": true,
+      "executor": "@nx/web:file-server",
+      "options": {
+        "buildTarget": "nrp:build",
+        "staticFilePath": "dist/apps/nrp/browser",
+        "spa": true
+      }
+    }
+  }
+}

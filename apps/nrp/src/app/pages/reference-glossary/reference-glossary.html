@@ -1,0 +1,25 @@
+<div class="page">
+  <header class="topbar no-print">
+    <a class="topbar__brand" href="../">
+      <span class="topbar__logo">✦</span>
+      StudyHub
+    </a>
+    <a class="topbar__course" href=".">برنامه احیای نوزاد (NRP نسخه ۸)</a>
+    <lib-theme-toggle />
+  </header>
+
+  <main class="ref">
+    <h1 class="ref__title">واژه‌نامه‌ی دوزبانه</h1>
+
+    <div class="ref__card">
+      <div class="glossary-grid">
+        @for (t of terms; track t.en) {
+          <div class="gterm">
+            <span class="fa">{{ t.fa }}</span>
+            <span class="en">{{ t.en }}</span>
+          </div>
+        }
+      </div>
+    </div>
+  </main>
+</div>

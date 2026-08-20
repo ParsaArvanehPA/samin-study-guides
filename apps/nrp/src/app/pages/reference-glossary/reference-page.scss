@@ -1,0 +1,129 @@
+@use 'tokens/surfaces' as surf;
+
+:host {
+  display: block;
+}
+
+.page {
+  min-height: 100vh;
+  background: var(--bg);
+}
+
+.topbar {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 18px 24px;
+
+  a {
+    text-decoration: none;
+  }
+}
+.topbar__brand {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 15px;
+  color: var(--ink);
+}
+.topbar__logo {
+  color: var(--accent);
+}
+.topbar__course {
+  color: var(--ink-soft);
+  font-size: 14px;
+  border-inline-start: 1px solid var(--border);
+  padding-inline-start: 16px;
+}
+lib-theme-toggle {
+  margin-inline-start: auto;
+}
+
+.ref {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 8px 24px 100px;
+}
+
+.ref__title {
+  font-family: var(--font-display);
+  font-size: clamp(26px, 4vw, 36px);
+  margin: 20px 0 22px;
+}
+
+.ref__card {
+  @include surf.card;
+  padding: 26px 30px;
+  margin-bottom: 20px;
+}
+
+.ref__facts h2 {
+  font-size: 18px;
+  margin: 0 0 14px;
+  color: var(--gold);
+}
+.ref__facts ul {
+  margin: 0;
+  padding-inline-start: 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.ref__facts li {
+  color: var(--ink);
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+.table-wrap {
+  overflow-x: auto;
+}
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14.5px;
+
+  th,
+  td {
+    border: 1px solid var(--border);
+    padding: 9px 12px;
+    text-align: start;
+  }
+  thead th {
+    background: var(--surface-2);
+    font-size: 13px;
+    color: var(--ink-soft);
+  }
+}
+
+.glossary-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0 28px;
+}
+@media (max-width: 700px) {
+  .glossary-grid {
+    grid-template-columns: 1fr;
+  }
+}
+.gterm {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--border);
+  font-size: 14.5px;
+}
+.gterm .fa {
+  color: var(--ink);
+}
+.gterm .en {
+  color: var(--ink-faint);
+  font-weight: 600;
+  text-align: left;
+  direction: ltr;
+}

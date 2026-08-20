@@ -13,10 +13,14 @@
  *   - "<owner>/<owner>.github.io"  -> served at "/"
  *   - "<owner>/<anything-else>"    -> served at "/<anything-else>/"
  * Falls back to "/" for local runs (no GITHUB_REPOSITORY set).
+ *
+ * To add a new course app, just add its project name to COURSE_APPS below.
  */
 import { execSync } from 'node:child_process';
 import { cpSync, existsSync, mkdirSync, rmSync, writeFileSync, copyFileSync } from 'node:fs';
 import { join } from 'node:path';
+
+const COURSE_APPS = ['obgyn', 'obgyn-v2', 'newborn-care', 'nrp'];
 
 const root = new URL('..', import.meta.url).pathname;
 const repo = process.env.GITHUB_REPOSITORY; // "owner/name"
@@ -26,11 +30,12 @@ if (repo) {
   const [owner, name] = repo.split('/');
   base = name?.toLowerCase() === `${owner.toLowerCase()}.github.io` ? '/' : `/${name}/`;
 }
-const obgynBase = base.endsWith('/') ? `${base}obgyn/` : `${base}/obgyn/`;
-const obgynV2Base = base.endsWith('/') ? `${base}obgyn-v2/` : `${base}/obgyn-v2/`;
-const newbornCareBase = base.endsWith('/') ? `${base}newborn-care/` : `${base}/newborn-care/`;
+const courseBase = (name) => (base.endsWith('/') ? `${base}${name}/` : `${base}/${name}/`);
 
-console.log(`[assemble-deploy] base="${base}" obgynBase="${obgynBase}" obgynV2Base="${obgynV2Base}" newbornCareBase="${newbornCareBase}"`);
+console.log(`[assemble-deploy] base="${base}"`);
+for (const app of COURSE_APPS) {
+  console.log(`[assemble-deploy] ${app}Base="${courseBase(app)}"`);
+}
 
 function run(cmd) {
   console.log(`[assemble-deploy] $ ${cmd}`);
@@ -38,28 +43,23 @@ function run(cmd) {
 }
 
 run(`npx nx build landing --configuration=production --base-href ${base}`);
-run(`npx nx build obgyn --configuration=production --base-href ${obgynBase}`);
-run(`npx nx build obgyn-v2 --configuration=production --base-href ${obgynV2Base}`);
-run(`npx nx build newborn-care --configuration=production --base-href ${newbornCareBase}`);
+for (const app of COURSE_APPS) {
+  run(`npx nx build ${app} --configuration=production --base-href ${courseBase(app)}`);
+}
 
 const deployDir = join(root, 'dist-deploy');
 rmSync(deployDir, { recursive: true, force: true });
 mkdirSync(deployDir, { recursive: true });
 
 const landingBrowser = join(root, 'dist/apps/landing/browser');
-const obgynBrowser = join(root, 'dist/apps/obgyn/browser');
-const obgynV2Browser = join(root, 'dist/apps/obgyn-v2/browser');
-const newbornCareBrowser = join(root, 'dist/apps/newborn-care/browser');
-
 if (!existsSync(landingBrowser)) throw new Error(`Missing build output: ${landingBrowser}`);
-if (!existsSync(obgynBrowser)) throw new Error(`Missing build output: ${obgynBrowser}`);
-if (!existsSync(obgynV2Browser)) throw new Error(`Missing build output: ${obgynV2Browser}`);
-if (!existsSync(newbornCareBrowser)) throw new Error(`Missing build output: ${newbornCareBrowser}`);
-
 cpSync(landingBrowser, deployDir, { recursive: true });
-cpSync(obgynBrowser, join(deployDir, 'obgyn'), { recursive: true });
-cpSync(obgynV2Browser, join(deployDir, 'obgyn-v2'), { recursive: true });
-cpSync(newbornCareBrowser, join(deployDir, 'newborn-care'), { recursive: true });
+
+for (const app of COURSE_APPS) {
+  const browser = join(root, `dist/apps/${app}/browser`);
+  if (!existsSync(browser)) throw new Error(`Missing build output: ${browser}`);
+  cpSync(browser, join(deployDir, app), { recursive: true });
+}
 
 writeFileSync(join(deployDir, '.nojekyll'), '');
 copyFileSync(join(landingBrowser, 'index.html'), join(deployDir, '404.html'));

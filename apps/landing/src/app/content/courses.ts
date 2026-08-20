@@ -35,6 +35,17 @@ export const COURSES: CourseMeta[] = [
     chapterCount: 8,
   },
   {
+    id: 'nrp',
+    titleFa: 'برنامه احیای نوزاد (NRP نسخه ۸)',
+    titleEn: 'Neonatal Resuscitation Program (NRP), 8th Edition',
+    descriptionFa:
+      '۱۴ درس، بر پایه‌ی ترجمه‌ی رسمی فارسی «درسنامه احیای نوزاد» (ویراست هشتم)، همراه با خودآزمایی.',
+    href: 'nrp/',
+    status: 'live',
+    icon: '👶',
+    chapterCount: 14,
+  },
+  {
     id: 'pharmacology',
     titleFa: 'فارماکولوژی',
     titleEn: 'Pharmacology',

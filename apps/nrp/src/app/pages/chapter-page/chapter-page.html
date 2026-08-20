@@ -1,0 +1,83 @@
+<div class="page">
+  <header class="topbar no-print">
+    <a class="topbar__brand" href="../">
+      <span class="topbar__logo">✦</span>
+      StudyHub
+    </a>
+    <a class="topbar__course" href=".">برنامه احیای نوزاد (NRP نسخه ۸)</a>
+    <lib-theme-toggle />
+  </header>
+
+  <main class="chapter">
+    <div class="chapter__head">
+      <p class="chapter__eyebrow">{{ chapter().titleEn }} · {{ chapter().readingMinutes }} دقیقه مطالعه</p>
+      <h1 class="chapter__title">{{ chapter().titleFa }}</h1>
+    </div>
+
+    <lib-chapter-nav
+      class="no-print"
+      [chapters]="navItems"
+      [currentId]="chapter().id"
+      [courseHomeHref]="courseHomeHref"
+    />
+
+    <article class="chapter__body">
+      @for (section of chapter().sections; track section.heading) {
+        <section class="chapter__section">
+          <h2>{{ section.heading }}</h2>
+          @for (p of section.paragraphsHtml; track $index) {
+            <div class="chapter__paragraph" [innerHTML]="p"></div>
+          }
+          @if (section.table; as t) {
+            <div class="table-wrap">
+              <table class="data-table">
+                @if (t.caption) {
+                  <caption>{{ t.caption }}</caption>
+                }
+                <thead>
+                  <tr>
+                    @for (h of t.headers; track $index) {
+                      <th>{{ h }}</th>
+                    }
+                  </tr>
+                </thead>
+                <tbody>
+                  @for (row of t.rows; track $index) {
+                    <tr>
+                      @for (cell of row; track $index) {
+                        <td>{{ cell }}</td>
+                      }
+                    </tr>
+                  }
+                </tbody>
+              </table>
+              @if (t.note) {
+                <p class="table-note">{{ t.note }}</p>
+              }
+            </div>
+          }
+          @for (fig of section.figures; track fig.src) {
+            <lib-figure [fig]="fig" />
+          }
+          @for (c of section.callouts; track c.label) {
+            <lib-callout [block]="c" />
+          }
+        </section>
+      }
+    </article>
+
+    @if (hasQuiz()) {
+      <section class="chapter__quiz">
+        <h2 class="chapter__quiz-title">خودآزمایی این درس</h2>
+        <lib-quiz-engine [questions]="chapter().quiz" />
+      </section>
+    }
+
+    <lib-chapter-nav
+      class="no-print"
+      [chapters]="navItems"
+      [currentId]="chapter().id"
+      [courseHomeHref]="courseHomeHref"
+    />
+  </main>
+</div>
