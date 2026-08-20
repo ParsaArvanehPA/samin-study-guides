@@ -24,6 +24,17 @@ export const COURSES: CourseMeta[] = [
     chapterCount: 10,
   },
   {
+    id: 'newborn-care',
+    titleFa: 'مراقبت بحرانی نوزاد در معرض خطر',
+    titleEn: 'Critical Care of the At-Risk Newborn (ACoRN)',
+    descriptionFa:
+      '۸ فصل، هرکدام یک بانک سؤال تعاملی (چهارگزینه‌ای، کوتاه‌پاسخ، صحیح/غلط) بر پایه‌ی برنامه‌ی ACoRN.',
+    href: 'newborn-care/',
+    status: 'live',
+    icon: '🍼',
+    chapterCount: 8,
+  },
+  {
     id: 'pharmacology',
     titleFa: 'فارماکولوژی',
     titleEn: 'Pharmacology',

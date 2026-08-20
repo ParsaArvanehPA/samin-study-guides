@@ -1,0 +1,36 @@
+<div class="page">
+  <header class="topbar no-print">
+    <a class="topbar__brand" href="../">
+      <span class="topbar__logo">✦</span>
+      StudyHub
+    </a>
+    <lib-theme-toggle />
+  </header>
+
+  <main class="home">
+    <div class="home__intro">
+      <p class="home__eyebrow">Neonatology · ACoRN</p>
+      <h1 class="home__title">مراقبت بحرانی نوزاد در معرض خطر</h1>
+      <p class="home__sub">
+        ۸ فصل، هرکدام یک بانک سؤال تعاملی (چهارگزینه‌ای، کوتاه‌پاسخ، و
+        صحیح/غلط) بر پایه‌ی برنامه‌ی ACoRN — برای خودآزمایی و مرور سریع پیش از
+        امتحان.
+      </p>
+    </div>
+
+    <div class="home__grid">
+      @for (c of chapters; track c.id) {
+        <lib-course-card
+          variant="flat"
+          [titleFa]="c.titleFa"
+          [titleEn]="c.titleEn"
+          [subtitleFa]="c.summaryFa"
+          [metaFa]="c.readingMinutes + ' دقیقه'"
+          [badge]="'فصل ' + c.order"
+          icon="🍼"
+          [href]="'chapters/' + c.id"
+        />
+      }
+    </div>
+  </main>
+</div>

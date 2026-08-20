@@ -9,6 +9,7 @@ A multi-course study platform. Nx monorepo of Angular apps, statically prerender
 - **`apps/landing`** — the course-selector homepage.
 - **`apps/obgyn`** — the first course: 12 chapters of OB/GYN study material (bilingual Persian/English notes, original textbook figures, and an interactive self-test per chapter — 235 multiple-choice + 60 short-answer questions), plus reference pages (key numbers, glossary).
 - **`apps/obgyn-v2`** — a from-scratch OB/GYN rebuild authored directly from the Williams Obstetrics 26th-edition PDF text (`source-material/williams-obstetrics-2022.pdf`) instead of the scanned notes `apps/obgyn` was built from; same structure, no figures, larger self-tests. Raw per-chapter source text lives in `source-material/obgyn-v2/raw/`.
+- **`apps/newborn-care`** — a quiz-only course (no narrative chapter text) on critical care of the at-risk newborn, based on the ACoRN program. 8 chapters, 686 questions total, converted from standalone HTML question banks in `source-material/مراقبت بحرانی نوزاد در معرض خطر/` into the shared `ChapterData`/`QuizQuestion` model.
 - **`libs/shared/theme`** — design tokens, fonts, dark/light theming, RTL base styles.
 - **`libs/shared/ui`** — shared Angular components: course cards, chapter nav, callouts, figures, the quiz engine.
 - **`libs/shared/models`** — TypeScript interfaces shared across apps and content files.

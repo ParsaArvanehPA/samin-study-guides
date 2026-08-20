@@ -28,8 +28,9 @@ if (repo) {
 }
 const obgynBase = base.endsWith('/') ? `${base}obgyn/` : `${base}/obgyn/`;
 const obgynV2Base = base.endsWith('/') ? `${base}obgyn-v2/` : `${base}/obgyn-v2/`;
+const newbornCareBase = base.endsWith('/') ? `${base}newborn-care/` : `${base}/newborn-care/`;
 
-console.log(`[assemble-deploy] base="${base}" obgynBase="${obgynBase}" obgynV2Base="${obgynV2Base}"`);
+console.log(`[assemble-deploy] base="${base}" obgynBase="${obgynBase}" obgynV2Base="${obgynV2Base}" newbornCareBase="${newbornCareBase}"`);
 
 function run(cmd) {
   console.log(`[assemble-deploy] $ ${cmd}`);
@@ -39,6 +40,7 @@ function run(cmd) {
 run(`npx nx build landing --configuration=production --base-href ${base}`);
 run(`npx nx build obgyn --configuration=production --base-href ${obgynBase}`);
 run(`npx nx build obgyn-v2 --configuration=production --base-href ${obgynV2Base}`);
+run(`npx nx build newborn-care --configuration=production --base-href ${newbornCareBase}`);
 
 const deployDir = join(root, 'dist-deploy');
 rmSync(deployDir, { recursive: true, force: true });
@@ -47,14 +49,17 @@ mkdirSync(deployDir, { recursive: true });
 const landingBrowser = join(root, 'dist/apps/landing/browser');
 const obgynBrowser = join(root, 'dist/apps/obgyn/browser');
 const obgynV2Browser = join(root, 'dist/apps/obgyn-v2/browser');
+const newbornCareBrowser = join(root, 'dist/apps/newborn-care/browser');
 
 if (!existsSync(landingBrowser)) throw new Error(`Missing build output: ${landingBrowser}`);
 if (!existsSync(obgynBrowser)) throw new Error(`Missing build output: ${obgynBrowser}`);
 if (!existsSync(obgynV2Browser)) throw new Error(`Missing build output: ${obgynV2Browser}`);
+if (!existsSync(newbornCareBrowser)) throw new Error(`Missing build output: ${newbornCareBrowser}`);
 
 cpSync(landingBrowser, deployDir, { recursive: true });
 cpSync(obgynBrowser, join(deployDir, 'obgyn'), { recursive: true });
 cpSync(obgynV2Browser, join(deployDir, 'obgyn-v2'), { recursive: true });
+cpSync(newbornCareBrowser, join(deployDir, 'newborn-care'), { recursive: true });
 
 writeFileSync(join(deployDir, '.nojekyll'), '');
 copyFileSync(join(landingBrowser, 'index.html'), join(deployDir, '404.html'));

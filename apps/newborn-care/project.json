@@ -1,0 +1,91 @@
+{
+  "name": "newborn-care",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "application",
+  "prefix": "app",
+  "sourceRoot": "apps/newborn-care/src",
+  "tags": [
+    "scope:newborn-care"
+  ],
+  "targets": {
+    "build": {
+      "executor": "@angular/build:application",
+      "outputs": [
+        "{options.outputPath}"
+      ],
+      "defaultConfiguration": "production",
+      "options": {
+        "outputPath": "dist/apps/newborn-care",
+        "browser": "apps/newborn-care/src/main.ts",
+        "tsConfig": "apps/newborn-care/tsconfig.app.json",
+        "inlineStyleLanguage": "scss",
+        "assets": [
+          {
+            "glob": "**/*",
+            "input": "apps/newborn-care/public"
+          }
+        ],
+        "styles": [
+          "apps/newborn-care/src/styles.scss"
+        ],
+        "stylePreprocessorOptions": {
+          "includePaths": [
+            "libs/shared/theme/src/lib"
+          ]
+        },
+        "server": "apps/newborn-care/src/main.server.ts",
+        "ssr": {
+          "entry": "apps/newborn-care/src/server.ts"
+        },
+        "outputMode": "static"
+      },
+      "configurations": {
+        "production": {
+          "budgets": [
+            {
+              "type": "initial",
+              "maximumWarning": "500kb",
+              "maximumError": "1mb"
+            },
+            {
+              "type": "anyComponentStyle",
+              "maximumWarning": "8kb",
+              "maximumError": "12kb"
+            }
+          ],
+          "outputHashing": "all"
+        },
+        "development": {
+          "optimization": false,
+          "extractLicenses": false,
+          "sourceMap": true
+        }
+      }
+    },
+    "serve": {
+      "continuous": true,
+      "executor": "@angular/build:dev-server",
+      "defaultConfiguration": "development",
+      "configurations": {
+        "production": {
+          "buildTarget": "newborn-care:build:production"
+        },
+        "development": {
+          "buildTarget": "newborn-care:build:development"
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint"
+    },
+    "serve-static": {
+      "continuous": true,
+      "executor": "@nx/web:file-server",
+      "options": {
+        "buildTarget": "newborn-care:build",
+        "staticFilePath": "dist/apps/newborn-care/browser",
+        "spa": true
+      }
+    }
+  }
+}
