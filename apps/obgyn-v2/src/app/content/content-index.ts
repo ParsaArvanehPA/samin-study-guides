@@ -29,9 +29,19 @@ export const CHAPTER_META: ChapterMeta[] = [
     summaryFa: 'تشخیص شروع لیبر، جهت‌گیری جنین، حرکات اصلی، مراحل زایمان، و اداره‌ی لیبر طبیعی — بر پایه‌ی فصل ۲۲ ویلیامز ۲۶.',
     readingMinutes: 24,
   },
+  {
+    id: 'abnormal-labor',
+    order: 3,
+    code: 'ch23',
+    titleFa: 'لیبر غیرطبیعی',
+    titleEn: 'Abnormal Labor',
+    summaryFa: 'دیستوشی، اختلال عملکرد رحم، عدم‌تناسب فتوپلویک، و پرزانتاسیون‌های غیرطبیعی — بر پایه‌ی فصل ۲۳ ویلیامز ۲۶.',
+    readingMinutes: 20,
+  },
 ];
 
 export const CHAPTER_LOADERS: Record<string, () => Promise<{ chapter: ChapterData }>> = {
   'physiology-of-labor': () => import('./physiology-of-labor.data'),
   'normal-labor': () => import('./normal-labor.data'),
+  'abnormal-labor': () => import('./abnormal-labor.data'),
 };
