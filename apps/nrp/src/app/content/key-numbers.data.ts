@@ -19,6 +19,12 @@ export const KEY_NUMBERS: KeyNumberRow[] = [
   { param: 'فشار ساکشن دیواری استاندارد', value: '80–100 mmHg' },
   { param: 'تنظیم جریان‌سنج تجهیزات تهویه', value: '10 L/min' },
   { param: 'غلظت استاندارد اپی‌نفرین', value: '0.1 mg/mL (1 mg/10 mL)' },
+  { param: 'تأخیر توصیه‌شده در گیره زدن بند ناف (نوزاد سرحال)', value: '30–60 sec' },
+  { param: 'مدت زمان مجاز برای تکمیل گام‌های نخستین', value: '~30 sec' },
+  { param: 'حداقل ضربان قلب طبیعی در نوزاد با تنفس مؤثر', value: '≥100 bpm' },
+  { param: 'دمای هدف بدن طی احیا و پایدارسازی', value: '36.5–37.5°C' },
+  { param: 'غلظت شروع اکسیژن کمکی (وقتی نیاز باشد)', value: '30%' },
+  { param: 'حداقل افراد توانمند در تولد با مایع مکونیومی', value: '≥2 (dedicated to the newborn)' },
 ];
 
 export const HIGH_YIELD_FACTS: string[] = [

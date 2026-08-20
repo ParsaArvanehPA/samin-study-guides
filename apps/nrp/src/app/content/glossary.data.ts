@@ -23,4 +23,13 @@ export const GLOSSARY_TERMS: GlossaryTerm[] = [
   { fa: 'کاتتر سیاهرگ نافی', en: 'Umbilical venous catheter (UVC)' },
   { fa: 'دیستوشی شانه', en: 'Shoulder dystocia' },
   { fa: 'کوریوآمنیونیت', en: 'Chorioamnionitis' },
+  { fa: 'گیره زدن تأخیری بند ناف', en: 'Delayed cord clamping' },
+  { fa: 'تنفس منقطع', en: 'Gasping' },
+  { fa: 'آکروسیانوز', en: 'Acrocyanosis' },
+  { fa: 'سیانوز مرکزی', en: 'Central cyanosis' },
+  { fa: 'پالس‌اکسی‌متری', en: 'Pulse oximetry' },
+  { fa: 'جریان آزاد اکسیژن', en: 'Free-flow oxygen' },
+  { fa: 'فشار مثبت پیوسته‌ی راه هوایی', en: 'Continuous positive airway pressure (CPAP)' },
+  { fa: 'مایع آمنیونی مکونیومی', en: 'Meconium-stained amniotic fluid' },
+  { fa: 'فعالیت الکتریکی بدون نبض', en: 'Pulseless electrical activity (PEA)' },
 ];

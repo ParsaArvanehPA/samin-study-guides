@@ -29,9 +29,19 @@ export const CHAPTER_META: ChapterMeta[] = [
     summaryFa: 'عوامل خطر پیرامون تولد، ۴ پرسش کلیدی پیش از تولد، تعیین نیروی انسانی، نشست پیش از احیا، بررسی تجهیزات، ویژگی‌های رهبر مؤثر، ارتباط حلقه‌بسته، و اهمیت مستندسازی — بر پایه‌ی درس ۲ برنامه‌ی احیای نوزاد (NRP)، ویراست هشتم.',
     readingMinutes: 20,
   },
+  {
+    id: 'ch03-initial-steps',
+    order: 3,
+    code: 'L3',
+    titleFa: 'گام‌های نخستین مراقبت از نوزاد',
+    titleEn: 'Initial Steps of Newborn Care',
+    summaryFa: 'زمان‌بندی گیره زدن بند ناف، ارزیابی سریع نوزاد، ۵ گام نخستین مراقبت، ارزیابی پاسخ (تنفس و ضربان قلب)، سیانوز و پالس‌اکسی‌متری، تجویز اکسیژن آزاد، CPAP، و رویکرد به مایع آمنیونی مکونیومی — بر پایه‌ی درس ۳ برنامه‌ی احیای نوزاد (NRP)، ویراست هشتم.',
+    readingMinutes: 26,
+  },
 ];
 
 export const CHAPTER_LOADERS: Record<string, () => Promise<{ chapter: ChapterData }>> = {
   'ch01-fundamentals': () => import('./ch01-fundamentals.data'),
   'ch02-anticipation-preparation': () => import('./ch02-anticipation-preparation.data'),
+  'ch03-initial-steps': () => import('./ch03-initial-steps.data'),
 };
