@@ -83,6 +83,15 @@ export const CHAPTER_META: ChapterMeta[] = [
     summaryFa: 'بازگشت دستگاه تناسلی، شیردهی، مراقبت بیمارستانی/منزل، و عوارض نفاس — بر پایه‌ی فصل ۳۶ ویلیامز ۲۶.',
     readingMinutes: 22,
   },
+  {
+    id: 'gi-disorders',
+    order: 9,
+    code: 'ch55',
+    titleFa: 'اختلالات گوارشی',
+    titleEn: 'Gastrointestinal Disorders',
+    summaryFa: 'هایپرمزیس، ریفلاکس و زخم پپتیک، بیماری التهابی روده، انسداد روده، و آپاندیسیت در بارداری — بر پایه‌ی فصل ۵۵ ویلیامز ۲۶.',
+    readingMinutes: 18,
+  },
 ];
 
 export const CHAPTER_LOADERS: Record<string, () => Promise<{ chapter: ChapterData }>> = {
@@ -94,4 +103,5 @@ export const CHAPTER_LOADERS: Record<string, () => Promise<{ chapter: ChapterDat
   'breech-delivery': () => import('./breech-delivery.data'),
   'prenatal-care': () => import('./prenatal-care.data'),
   'puerperium': () => import('./puerperium.data'),
+  'gi-disorders': () => import('./gi-disorders.data'),
 };
