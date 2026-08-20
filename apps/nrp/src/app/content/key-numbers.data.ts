@@ -33,6 +33,13 @@ export const KEY_NUMBERS: KeyNumberRow[] = [
   { param: 'بیشینه فشار دمی طی گام P در MR. SOPA — رسیده/نارس', value: '40 / 30 cmH2O' },
   { param: 'فشار CPAP معمول', value: '5–6 cmH2O (max 8)' },
   { param: 'حداقل وزن نوزاد برای ماسک حنجره‌ای استاندارد', value: '>2 kg' },
+  { param: 'زمان بهینه‌ی هر تلاش لوله‌گذاری نای', value: '~30 sec' },
+  { param: 'عمق نوک لوله زیر تارهای صوتی', value: '1–2 cm' },
+  { param: 'فرمول عمق فرو بردن لوله (روش NTL)', value: 'NTL + 1 cm' },
+  { param: 'فشار ساکشن نای مستقیم', value: '80–100 mmHg' },
+  { param: 'مدت ساکشن مستقیم نای هنگام خارج کردن کاتتر', value: '3–5 sec' },
+  { param: 'اندازه‌ی لوله‌ی نای — وزن <1000 گرم', value: '2.5 mm ID' },
+  { param: 'اندازه‌ی لوله‌ی نای — وزن >2000 گرم', value: '3.5 mm ID' },
 ];
 
 export const HIGH_YIELD_FACTS: string[] = [

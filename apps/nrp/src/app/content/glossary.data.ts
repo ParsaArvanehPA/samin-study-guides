@@ -41,4 +41,12 @@ export const GLOSSARY_TERMS: GlossaryTerm[] = [
   { fa: 'لوله دهانی معدی', en: 'Orogastric tube' },
   { fa: 'گام‌های اصلاحی تهویه', en: 'Ventilation corrective steps (MR. SOPA)' },
   { fa: 'آشکارساز دی‌اکسیدکربن', en: 'CO2 detector / capnograph' },
+  { fa: 'لارنگوسکوپ', en: 'Laryngoscope' },
+  { fa: 'والکولا', en: 'Vallecula' },
+  { fa: 'اپی‌گلوت', en: 'Epiglottis' },
+  { fa: 'گلوت', en: 'Glottis' },
+  { fa: 'کارینا', en: 'Carina' },
+  { fa: 'فاصله بینی تا تراگوس', en: 'Nasal-tragus length (NTL)' },
+  { fa: 'مکنده مکونیوم', en: 'Meconium aspirator' },
+  { fa: 'ویدئولارنگوسکوپ', en: 'Video laryngoscope' },
 ];

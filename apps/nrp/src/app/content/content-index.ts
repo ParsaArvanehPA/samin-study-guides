@@ -47,6 +47,15 @@ export const CHAPTER_META: ChapterMeta[] = [
     summaryFa: 'دستگاه‌های تهویه (بگ خودگشا، بگ وابسته به جریان، تی‌پیس احیا)، موارد و روش آغاز PPV، تکنیک ماسک، غلظت اکسیژن/سرعت/فشار، ارزیابی پاسخ، گام‌های اصلاحی تهویه (MR. SOPA)، ماسک حنجره‌ای، CPAP، و لوله دهانی معدی — بر پایه‌ی درس ۴ برنامه‌ی احیای نوزاد (NRP)، ویراست هشتم.',
     readingMinutes: 32,
   },
+  {
+    id: 'ch05-intubation',
+    order: 5,
+    code: 'L5',
+    titleFa: 'لوله‌گذاری نای',
+    titleEn: 'Endotracheal Intubation',
+    summaryFa: 'موارد لوله‌گذاری، آناتومی راه هوایی، تجهیزات و انتخاب اندازه‌ی لوله، وضعیت دادن نوزاد، روش لارنگوسکوپی و ورود لوله، تأیید جاگذاری با آشکارساز CO2، عمق فرو بردن لوله (NTL)، محکم کردن لوله، ساکشن مستقیم نای، و مخفف DOPE — بر پایه‌ی درس ۵ برنامه‌ی احیای نوزاد (NRP)، ویراست هشتم.',
+    readingMinutes: 30,
+  },
 ];
 
 export const CHAPTER_LOADERS: Record<string, () => Promise<{ chapter: ChapterData }>> = {
@@ -54,4 +63,5 @@ export const CHAPTER_LOADERS: Record<string, () => Promise<{ chapter: ChapterDat
   'ch02-anticipation-preparation': () => import('./ch02-anticipation-preparation.data'),
   'ch03-initial-steps': () => import('./ch03-initial-steps.data'),
   'ch04-ppv': () => import('./ch04-ppv.data'),
+  'ch05-intubation': () => import('./ch05-intubation.data'),
 };
