@@ -67,4 +67,10 @@ export const GLOSSARY_TERMS: GlossaryTerm[] = [
   { fa: 'گرم‌کننده‌ی خودتنظیم‌شونده', en: 'Servo-controlled warmer' },
   { fa: 'دوشیدن بند ناف', en: 'Umbilical cord milking' },
   { fa: 'خونریزی درون‌بطنی', en: 'Intraventricular hemorrhage (IVH)' },
+  { fa: 'پرفشاری پایدار خون ریوی نوزادی', en: 'Persistent pulmonary hypertension of the newborn (PPHN)' },
+  { fa: 'آنسفالوپاتی هیپوکسیک-ایسکمیک', en: 'Hypoxic-ischemic encephalopathy (HIE)' },
+  { fa: 'سرمادرمانی', en: 'Therapeutic hypothermia' },
+  { fa: 'نکروز توبولی حاد', en: 'Acute tubular necrosis (ATN)' },
+  { fa: 'اکسیژن‌رسانی غشای خارج بدنی', en: 'Extracorporeal membrane oxygenation (ECMO)' },
+  { fa: 'بی‌کربنات سدیم', en: 'Sodium bicarbonate' },
 ];

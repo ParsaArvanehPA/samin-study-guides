@@ -83,6 +83,15 @@ export const CHAPTER_META: ChapterMeta[] = [
     summaryFa: 'چرایی آسیب‌پذیری بیشتر نوزادان نارس، منابع اضافی موردنیاز، راهکارهای حفظ دما (پوشش پلی‌اتیلن، تشک گرمایی)، نکات ویژه‌ی تهویه‌ی کمکی و CPAP زودرس، تجویز سورفاکتانت (LISA/INSURE)، هدف اکسیژن، احتیاط‌های کاهش آسیب عصبی، و پایش پس از پایدارسازی — بر پایه‌ی درس ۸ برنامه‌ی احیای نوزاد (NRP)، ویراست هشتم.',
     readingMinutes: 26,
   },
+  {
+    id: 'ch09-postresuscitation-care',
+    order: 9,
+    code: 'L9',
+    titleFa: 'مراقبت‌های پس از احیا',
+    titleEn: 'Post-resuscitation Care',
+    summaryFa: 'مراقبت معمول در برابر مراقبت پس از احیا، اختلالات چند‌دستگاهی پس از احیا (دما، تنفسی، قلبی-عروقی، متابولیک، گوارشی، کلیوی، عصبی، خونی)، پرفشاری خون ریوی، آنسفالوپاتی هیپوکسیک-ایسکمیک، سرمادرمانی، و پرهیز از بی‌کربنات سدیم معمول — بر پایه‌ی درس ۹ برنامه‌ی احیای نوزاد (NRP)، ویراست هشتم.',
+    readingMinutes: 24,
+  },
 ];
 
 export const CHAPTER_LOADERS: Record<string, () => Promise<{ chapter: ChapterData }>> = {
@@ -94,4 +103,5 @@ export const CHAPTER_LOADERS: Record<string, () => Promise<{ chapter: ChapterDat
   'ch06-chest-compressions': () => import('./ch06-chest-compressions.data'),
   'ch07-medications': () => import('./ch07-medications.data'),
   'ch08-preterm': () => import('./ch08-preterm.data'),
+  'ch09-postresuscitation-care': () => import('./ch09-postresuscitation-care.data'),
 };

@@ -59,6 +59,8 @@ export const KEY_NUMBERS: KeyNumberRow[] = [
   { param: 'سقف PIP توصیه‌شده با ماسک صورت در نوزاد نارس', value: '30 cmH2O' },
   { param: 'اکسیژن نخستین برای احیای نوزاد نارس (<35 هفته)', value: '21%–30%' },
   { param: 'آستانه‌ی سن بارداری برای در دسترس بودن سورفاکتانت', value: '<30 weeks' },
+  { param: 'نسبت نوزادان رسیده‌ی سرحال نیازمند فقط مراقبت معمول', value: '~90%' },
+  { param: 'سن بارداری شایع بروز PPHN', value: '≥34 weeks' },
 ];
 
 export const HIGH_YIELD_FACTS: string[] = [
