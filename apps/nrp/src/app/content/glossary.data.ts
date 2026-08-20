@@ -65,4 +65,6 @@ export const GLOSSARY_TERMS: GlossaryTerm[] = [
   { fa: 'لوله‌گذاری-سورفاکتانت-خروج لوله', en: 'Intubate-Surfactant-Extubate (INSURE)' },
   { fa: 'وضعیت ترندلنبرگ', en: 'Trendelenburg position' },
   { fa: 'گرم‌کننده‌ی خودتنظیم‌شونده', en: 'Servo-controlled warmer' },
+  { fa: 'دوشیدن بند ناف', en: 'Umbilical cord milking' },
+  { fa: 'خونریزی درون‌بطنی', en: 'Intraventricular hemorrhage (IVH)' },
 ];
