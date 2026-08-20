@@ -32,4 +32,13 @@ export const GLOSSARY_TERMS: GlossaryTerm[] = [
   { fa: 'فشار مثبت پیوسته‌ی راه هوایی', en: 'Continuous positive airway pressure (CPAP)' },
   { fa: 'مایع آمنیونی مکونیومی', en: 'Meconium-stained amniotic fluid' },
   { fa: 'فعالیت الکتریکی بدون نبض', en: 'Pulseless electrical activity (PEA)' },
+  { fa: 'بگ خودگشا', en: 'Self-inflating bag' },
+  { fa: 'بگ وابسته به جریان', en: 'Flow-inflating bag' },
+  { fa: 'تی‌پیس احیا', en: 'T-piece resuscitator' },
+  { fa: 'بیشینه فشار دمی', en: 'Peak inspiratory pressure (PIP)' },
+  { fa: 'فشار مثبت پایان بازدمی', en: 'Positive end-expiratory pressure (PEEP)' },
+  { fa: 'ماسک حنجره‌ای', en: 'Laryngeal mask airway (LMA)' },
+  { fa: 'لوله دهانی معدی', en: 'Orogastric tube' },
+  { fa: 'گام‌های اصلاحی تهویه', en: 'Ventilation corrective steps (MR. SOPA)' },
+  { fa: 'آشکارساز دی‌اکسیدکربن', en: 'CO2 detector / capnograph' },
 ];

@@ -25,6 +25,14 @@ export const KEY_NUMBERS: KeyNumberRow[] = [
   { param: 'دمای هدف بدن طی احیا و پایدارسازی', value: '36.5–37.5°C' },
   { param: 'غلظت شروع اکسیژن کمکی (وقتی نیاز باشد)', value: '30%' },
   { param: 'حداقل افراد توانمند در تولد با مایع مکونیومی', value: '≥2 (dedicated to the newborn)' },
+  { param: 'سرعت تهویه با فشار مثبت (PPV)', value: '40–60 breaths/min' },
+  { param: 'PIP نخستین PPV', value: '20–25 cmH2O' },
+  { param: 'PEEP نخستین PPV', value: '5 cmH2O' },
+  { param: 'زمان ارزیابی ضربان قلب پس از آغاز PPV (افزایشی بودن)', value: '15 sec' },
+  { param: 'زمان ارزیابی مجدد ضربان قلب پس از PPV مؤثر', value: '30 sec' },
+  { param: 'بیشینه فشار دمی طی گام P در MR. SOPA — رسیده/نارس', value: '40 / 30 cmH2O' },
+  { param: 'فشار CPAP معمول', value: '5–6 cmH2O (max 8)' },
+  { param: 'حداقل وزن نوزاد برای ماسک حنجره‌ای استاندارد', value: '>2 kg' },
 ];
 
 export const HIGH_YIELD_FACTS: string[] = [
