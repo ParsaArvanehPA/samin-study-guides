@@ -65,6 +65,15 @@ export const CHAPTER_META: ChapterMeta[] = [
     summaryFa: 'طبقه‌بندی، انتخاب مسیر زایمان، تکنیک زایمان واژینال، و چرخش سفالیک خارجی — بر پایه‌ی فصل ۲۸ ویلیامز ۲۶.',
     readingMinutes: 20,
   },
+  {
+    id: 'prenatal-care',
+    order: 7,
+    code: 'ch10',
+    titleFa: 'مراقبت‌های پرناتال',
+    titleEn: 'Prenatal Care',
+    summaryFa: 'تشخیص بارداری، ویزیت‌های دوران بارداری، غربالگری‌های روتین، تغذیه و ایمن‌سازی — بر پایه‌ی فصل ۱۰ ویلیامز ۲۶.',
+    readingMinutes: 24,
+  },
 ];
 
 export const CHAPTER_LOADERS: Record<string, () => Promise<{ chapter: ChapterData }>> = {
@@ -74,4 +83,5 @@ export const CHAPTER_LOADERS: Record<string, () => Promise<{ chapter: ChapterDat
   'intrapartum-assessment': () => import('./intrapartum-assessment.data'),
   'vaginal-delivery': () => import('./vaginal-delivery.data'),
   'breech-delivery': () => import('./breech-delivery.data'),
+  'prenatal-care': () => import('./prenatal-care.data'),
 };
