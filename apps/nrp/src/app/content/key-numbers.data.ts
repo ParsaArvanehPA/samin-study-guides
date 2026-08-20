@@ -61,6 +61,10 @@ export const KEY_NUMBERS: KeyNumberRow[] = [
   { param: 'آستانه‌ی سن بارداری برای در دسترس بودن سورفاکتانت', value: '<30 weeks' },
   { param: 'نسبت نوزادان رسیده‌ی سرحال نیازمند فقط مراقبت معمول', value: '~90%' },
   { param: 'سن بارداری شایع بروز PPHN', value: '≥34 weeks' },
+  { param: 'فشار ساکشن مکنده‌ی مکونیوم روی نای', value: '80–100 mmHg' },
+  { param: 'اندازه‌ی سوزن آسپیراسیون توراسنتز', value: '18–20 gauge' },
+  { param: 'حجم سرنگ توراسنتز', value: '20–60 mL' },
+  { param: 'حداقل فاصله‌ی گیره زدن بند ناف از نوزاد در گاستروشزی', value: '10–20 cm' },
 ];
 
 export const HIGH_YIELD_FACTS: string[] = [
