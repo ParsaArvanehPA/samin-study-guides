@@ -2,7 +2,7 @@
 
 A multi-course study platform. Nx monorepo of Angular apps, statically prerendered (SSG), served on GitHub Pages.
 
-**Live**: https://parsaarvanehpa.github.io/samin-study-guides/ (once GitHub Pages is enabled in repo settings)
+**Live**: https://parsaarvanehpa.github.io/samin-study-guides/ — GitHub Pages is configured to serve the `docs/` folder on `main` (Settings → Pages → Deploy from a branch).
 
 ## What's here
 
@@ -15,7 +15,7 @@ A multi-course study platform. Nx monorepo of Angular apps, statically prerender
 - **`libs/shared/ui`** — shared Angular components: course cards, chapter nav, callouts, figures, the quiz engine.
 - **`libs/shared/models`** — TypeScript interfaces shared across apps and content files.
 - **`scripts/assemble-deploy.mjs`** — builds every app with the right base-href for GitHub Pages and merges them into one deployable `dist-deploy/` tree.
-- **`.github/workflows/deploy.yml`** — CI: builds and deploys `dist-deploy/` to GitHub Pages on every push to `main`.
+- **`docs/`** — the actual published output. There is no CI/Actions workflow; publishing is a manual step (see "Build & deploy" below) that copies a fresh `dist-deploy/` build into `docs/` and commits it, since GitHub Pages serves straight from that folder on `main`.
 
 Each `apps/obgyn/src/app/content/*.data.ts` file holds one chapter's full content (study notes + quiz), authored from the source transcripts in the separate `OBGYN/` archive — not duplicated here.
 
@@ -27,12 +27,25 @@ npx nx serve landing   # http://localhost:4200
 npx nx serve obgyn     # serve separately to view the course app
 ```
 
-## Build & deploy locally
+## Build & deploy
+
+Preview locally (base-href defaults to `/`):
 
 ```bash
-npm run deploy:assemble   # builds both apps (prerendered) into dist-deploy/
-npx serve dist-deploy     # preview exactly what GitHub Pages will serve
+npm run deploy:assemble   # builds all 5 apps (prerendered) into dist-deploy/
+npx serve dist-deploy     # preview locally
 ```
+
+To actually publish to GitHub Pages, rebuild with the real base-href and push the result — there is no CI step that does this for you:
+
+```bash
+GITHUB_REPOSITORY=ParsaArvanehPA/samin-study-guides npm run deploy:assemble
+rm -rf docs && mkdir docs && cp -r dist-deploy/. docs/
+git add docs && git commit -m "Rebuild docs/ for GitHub Pages: <what changed>"
+git push
+```
+
+GitHub Pages picks up the new `docs/` content on `main` automatically within a minute or two of the push.
 
 ## Adding a new course
 
