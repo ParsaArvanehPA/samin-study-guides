@@ -22,6 +22,11 @@ export const appRoutes: Route[] = [
         (m) => m.ReferenceGlossary,
       ),
   },
+  {
+    path: 'obgyn-exam',
+    loadComponent: () =>
+      import('./pages/obgyn-exam/obgyn-exam').then((m) => m.ObgynExam),
+  },
   ...CHAPTER_META.map(
     (meta): Route => ({
       path: `chapters/${meta.id}`,

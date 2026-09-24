@@ -73,6 +73,14 @@ lib-theme-toggle {
   text-wrap: balance;
 }
 
+.chapter__intro {
+  color: var(--ink-soft);
+  font-size: 15px;
+  line-height: 1.8;
+  margin: 12px 0 0;
+  max-width: 68ch;
+}
+
 .chapter__body {
   @include surf.card;
   padding: 8px 36px 20px;

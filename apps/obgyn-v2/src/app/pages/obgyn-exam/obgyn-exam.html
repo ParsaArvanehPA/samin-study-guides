@@ -1,0 +1,64 @@
+<div class="page">
+  <header class="topbar no-print">
+    <a class="topbar__brand" href="../">
+      <span class="topbar__logo">✦</span>
+      StudyHub
+    </a>
+    <a class="topbar__course" href=".">راهنمای مامایی و زنان (ویلیامز ۲۶)</a>
+    <lib-theme-toggle />
+  </header>
+
+  <main class="chapter">
+    <div class="chapter__head">
+      <p class="chapter__eyebrow">Exam Questions · بارداری و زایمان</p>
+      <h1 class="chapter__title">امتحان OBGYN: سؤال و پاسخ</h1>
+      <p class="chapter__intro">
+        پاسخ‌های زیر بر پایه‌ی ویلیامز ابستتریکس ۲۶ (همان منبع فصل‌های این
+        دوره) نوشته شده‌اند. در مواردی که نکته‌ای فراتر از متن سؤال اضافه شده،
+        با برچسب «افزوده‌ی دستیار» مشخص شده تا از پاسخ اصلی قابل‌تشخیص باشد.
+      </p>
+    </div>
+
+    <article class="chapter__body">
+      @for (section of questions; track section.heading) {
+        <section class="chapter__section">
+          <h2>{{ section.heading }}</h2>
+          @for (p of section.paragraphsHtml; track $index) {
+            <div class="chapter__paragraph" [innerHTML]="p"></div>
+          }
+          @if (section.table; as t) {
+            <div class="table-wrap">
+              <table class="data-table">
+                @if (t.caption) {
+                  <caption>{{ t.caption }}</caption>
+                }
+                <thead>
+                  <tr>
+                    @for (h of t.headers; track $index) {
+                      <th>{{ h }}</th>
+                    }
+                  </tr>
+                </thead>
+                <tbody>
+                  @for (row of t.rows; track $index) {
+                    <tr>
+                      @for (cell of row; track $index) {
+                        <td>{{ cell }}</td>
+                      }
+                    </tr>
+                  }
+                </tbody>
+              </table>
+              @if (t.note) {
+                <p class="table-note">{{ t.note }}</p>
+              }
+            </div>
+          }
+          @for (c of section.callouts; track c.label) {
+            <lib-callout [block]="c" />
+          }
+        </section>
+      }
+    </article>
+  </main>
+</div>
